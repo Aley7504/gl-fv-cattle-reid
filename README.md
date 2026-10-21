@@ -9,6 +9,9 @@ Code, frozen artefacts and result files accompanying the manuscript
 This repository contains everything needed to re-derive the reported numbers, except the source images of
 the two public datasets (see **Data** below).
 
+**Archived releases** — code and frozen artefacts: [10.5281/zenodo.23531194](https://doi.org/10.5281/zenodo.23531194) ·
+528 farm frames: [10.5281/zenodo.23529142](https://doi.org/10.5281/zenodo.23529142)
+
 ---
 
 ## What is here
@@ -22,7 +25,7 @@ the two public datasets (see **Data** below).
 | `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, farm evaluation, detector diagnosis). |
 | `manifests/` | Per-frame manifest for the 528 farm frames (identity, session, gallery/query role, frame index, ROI flags). |
 | `third_party/` | Vendored HesAffNet/HardNet++ PyTorch code (see provenance note inside). Not written by the authors. |
-| `artifacts/` | `farm_frames_528.zip` — the 528 farm frames plus the manifest. **Not tracked by git**; upload to Zenodo. |
+| `artifacts/` | `farm_frames_528.zip` — the 528 farm frames plus the manifest. **Not tracked by git**; archived on Zenodo as three part archives, see **Data** below. |
 
 ---
 
@@ -76,8 +79,10 @@ directly from `results/`.
 * **CFF** — Cows Frontal Face Dataset, Zenodo, DOI [10.5281/zenodo.10535934](https://doi.org/10.5281/zenodo.10535934).
   Not mirrored here.
 * **Farm frames** — 528 frames extracted from 44 clips recorded in a single session at a cattle farm in Jilin
-  Province, China, with one manually verified identity per clip. Released for research use in
-  `artifacts/farm_frames_528.zip` (see `DATA_LICENSE.md`). The clips were recorded with the farm owner's permission.
+  Province, China, with one manually verified identity per clip. Archived on Zenodo as three part archives,
+  DOI [10.5281/zenodo.23529142](https://doi.org/10.5281/zenodo.23529142) (see `DATA_LICENSE.md`); the same
+  frames are also bundled here as `artifacts/farm_frames_528.zip`, which is not tracked by git. The clips were
+  recorded with the farm owner's permission.
 
 ---
 

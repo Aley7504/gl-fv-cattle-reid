@@ -15,3 +15,13 @@ keywords:
   - ArcFace
   - precision livestock farming
 license: MIT
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23531194
+    description: "Archived code and frozen artefacts (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.23529142
+    description: "528 labelled farm frames (v1.0.0)"
+  - type: url
+    value: "https://github.com/Aley7504/gl-fv-cattle-reid"
+    description: "Development repository"

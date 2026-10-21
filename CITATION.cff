@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code or the farm frames, please cite the article below."
+title: "Global–Local Fisher Vector Fusion for Cattle Face Re-Identification: A Controlled Evaluation Across Enrollment Coverage"
+authors:
+  - family-names: "Lü"
+    given-names: "Baipuhan"
+  - family-names: "Liang"
+    given-names: "Wei"
+year: 2026
+type: article
+keywords:
+  - cattle face re-identification
+  - Fisher Vector
+  - global-local fusion
+  - ArcFace
+  - precision livestock farming
+license: MIT

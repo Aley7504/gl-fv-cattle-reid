@@ -1,0 +1,233 @@
+{
+ "caveat": "Post-hoc exploratory ablations computed from frozen artefacts only: no model, feature, split or realization was altered, and no parameter was re-selected for the main claim.",
+ "n_identities": 16,
+ "n_queries": 99,
+ "chance_rank1": 0.0625,
+ "regimes": {
+  "g1": {
+   "naming": "A=Global-only, B=Local-only (Fisher Vector), C=Fusion(alpha=0.5)",
+   "Global": {
+    "rank1": 0.3121,
+    "macro_rank1": 0.325,
+    "mrr": 0.506,
+    "rank1_sd": 0.0587,
+    "n": 30
+   },
+   "Local_FV": {
+    "rank1": 0.2737,
+    "macro_rank1": 0.2848,
+    "mrr": 0.4311,
+    "rank1_sd": 0.0364,
+    "n": 10
+   },
+   "Fusion": {
+    "rank1": 0.371,
+    "macro_rank1": 0.3826,
+    "mrr": 0.5481,
+    "rank1_sd": 0.0635,
+    "n": 30
+   },
+   "Local_MeanPool128": {
+    "rank1": 0.1919,
+    "macro_rank1": 0.2152,
+    "mrr": 0.3695,
+    "rank1_sd": 0.0319,
+    "n": 10
+   },
+   "Local_PCA32_MeanPool": {
+    "rank1": 0.1879,
+    "macro_rank1": 0.1997,
+    "mrr": 0.3653,
+    "rank1_sd": 0.0306,
+    "n": 10
+   },
+   "ConvNeXt_Global": {
+    "rank1": 0.5835,
+    "macro_rank1": 0.6505,
+    "mrr": 0.7247,
+    "rank1_sd": 0.0388,
+    "n": 30
+   },
+   "ConvNeXt_Fusion": {
+    "rank1": 0.566,
+    "macro_rank1": 0.6254,
+    "mrr": 0.7157,
+    "rank1_sd": 0.0324,
+    "n": 30
+   },
+   "alpha_sweep_rank1": {
+    "0.0": 0.2737,
+    "0.05": 0.3071,
+    "0.1": 0.3313,
+    "0.15": 0.3505,
+    "0.2": 0.3566,
+    "0.25": 0.3609,
+    "0.3": 0.3717,
+    "0.35": 0.3734,
+    "0.4": 0.3744,
+    "0.45": 0.3727,
+    "0.5": 0.371,
+    "0.55": 0.368,
+    "0.6": 0.3677,
+    "0.65": 0.3562,
+    "0.7": 0.3481,
+    "0.75": 0.3441,
+    "0.8": 0.3411,
+    "0.85": 0.3316,
+    "0.9": 0.3222,
+    "0.95": 0.3158,
+    "1.0": 0.3121
+   }
+  },
+  "g3": {
+   "naming": "A=Global-only, B=Local-only (Fisher Vector), C=Fusion(alpha=0.5)",
+   "Global": {
+    "rank1": 0.3734,
+    "macro_rank1": 0.381,
+    "mrr": 0.5681,
+    "rank1_sd": 0.0637,
+    "n": 30
+   },
+   "Local_FV": {
+    "rank1": 0.4434,
+    "macro_rank1": 0.4439,
+    "mrr": 0.5819,
+    "rank1_sd": 0.0254,
+    "n": 10
+   },
+   "Fusion": {
+    "rank1": 0.5064,
+    "macro_rank1": 0.5196,
+    "mrr": 0.6645,
+    "rank1_sd": 0.0578,
+    "n": 30
+   },
+   "Local_MeanPool128": {
+    "rank1": 0.2636,
+    "macro_rank1": 0.2705,
+    "mrr": 0.4407,
+    "rank1_sd": 0.0231,
+    "n": 10
+   },
+   "Local_PCA32_MeanPool": {
+    "rank1": 0.2636,
+    "macro_rank1": 0.2732,
+    "mrr": 0.4425,
+    "rank1_sd": 0.0279,
+    "n": 10
+   },
+   "ConvNeXt_Global": {
+    "rank1": 0.6912,
+    "macro_rank1": 0.7474,
+    "mrr": 0.812,
+    "rank1_sd": 0.0359,
+    "n": 30
+   },
+   "ConvNeXt_Fusion": {
+    "rank1": 0.7131,
+    "macro_rank1": 0.7535,
+    "mrr": 0.8226,
+    "rank1_sd": 0.0408,
+    "n": 30
+   },
+   "alpha_sweep_rank1": {
+    "0.0": 0.4434,
+    "0.05": 0.471,
+    "0.1": 0.4912,
+    "0.15": 0.4997,
+    "0.2": 0.501,
+    "0.25": 0.5091,
+    "0.3": 0.5182,
+    "0.35": 0.5263,
+    "0.4": 0.5239,
+    "0.45": 0.5128,
+    "0.5": 0.5064,
+    "0.55": 0.4997,
+    "0.6": 0.4869,
+    "0.65": 0.4545,
+    "0.7": 0.429,
+    "0.75": 0.4253,
+    "0.8": 0.4145,
+    "0.85": 0.4013,
+    "0.9": 0.3926,
+    "0.95": 0.3835,
+    "1.0": 0.3734
+   }
+  },
+  "full": {
+   "naming": "A=Global-only, B=Local-only (Fisher Vector), C=Fusion(alpha=0.5)",
+   "Global": {
+    "rank1": 0.3973,
+    "macro_rank1": 0.3938,
+    "mrr": 0.5941,
+    "rank1_sd": 0.0559,
+    "n": 30
+   },
+   "Local_FV": {
+    "rank1": 0.5556,
+    "macro_rank1": 0.5469,
+    "mrr": 0.6605,
+    "rank1_sd": 0.0,
+    "n": 10
+   },
+   "Fusion": {
+    "rank1": 0.5522,
+    "macro_rank1": 0.5538,
+    "mrr": 0.6996,
+    "rank1_sd": 0.0492,
+    "n": 30
+   },
+   "Local_MeanPool128": {
+    "rank1": 0.2929,
+    "macro_rank1": 0.3111,
+    "mrr": 0.4669,
+    "rank1_sd": 0.0,
+    "n": 10
+   },
+   "Local_PCA32_MeanPool": {
+    "rank1": 0.2929,
+    "macro_rank1": 0.3053,
+    "mrr": 0.4746,
+    "rank1_sd": 0.0,
+    "n": 10
+   },
+   "ConvNeXt_Global": {
+    "rank1": 0.7441,
+    "macro_rank1": 0.8133,
+    "mrr": 0.8467,
+    "rank1_sd": 0.0242,
+    "n": 30
+   },
+   "ConvNeXt_Fusion": {
+    "rank1": 0.7879,
+    "macro_rank1": 0.835,
+    "mrr": 0.8703,
+    "rank1_sd": 0.0252,
+    "n": 30
+   },
+   "alpha_sweep_rank1": {
+    "0.0": 0.5556,
+    "0.05": 0.5657,
+    "0.1": 0.569,
+    "0.15": 0.5724,
+    "0.2": 0.569,
+    "0.25": 0.5724,
+    "0.3": 0.5724,
+    "0.35": 0.5758,
+    "0.4": 0.5791,
+    "0.45": 0.5589,
+    "0.5": 0.5522,
+    "0.55": 0.5522,
+    "0.6": 0.5488,
+    "0.65": 0.5051,
+    "0.7": 0.4747,
+    "0.75": 0.4646,
+    "0.8": 0.4512,
+    "0.85": 0.4377,
+    "0.9": 0.4175,
+    "0.95": 0.4074,
+    "1.0": 0.3973
+   }
+  }
+ }
+}

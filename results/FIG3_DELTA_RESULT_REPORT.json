@@ -1,0 +1,79 @@
+{
+ "schema": "h2025_fig3_delta_result/v1",
+ "n_rows": 4,
+ "figure3_delta_ready": true,
+ "missing_source_rows": [],
+ "conflicts": [],
+ "rows": [
+  {
+   "Dataset": "H2025",
+   "Global_representation": "MobileNetV2 + ArcFace + CE (128-D)",
+   "Delta_R1_pp": 5.8923,
+   "CI_low_pp": 2.327,
+   "CI_high_pp": 9.4287,
+   "N_seed": 3,
+   "CI_method": "identity-cluster bootstrap, percentile 2.5/97.5; 16 identity clusters, B=10000, seed=20260917 (30 repeated conditions averaged)",
+   "Result_status": "FINAL",
+   "Source_file": "reports/H2_EVALUATION_RESULT.json",
+   "Source_field": "primary_contrast_R1.per_metric.rank1_query_weighted.H2a_point_estimate / H2a_ci95",
+   "Source_sha256": "bc51ca2f4c6e674ef4e7ddbcec8a5123c35956301c65065a55de4a4ea6a5f9be",
+   "Notes": "regime g1 (Delta_1g). Stored as a fraction; shown here x100 as pp. Contrast = C_seed - A_seed (Global+Local minus Global).",
+   "effect_direction": "POSITIVE",
+   "CI_excludes_zero": "YES"
+  },
+  {
+   "Dataset": "H2025",
+   "Global_representation": "ConvNeXt-Tiny",
+   "Delta_R1_pp": -1.7508,
+   "CI_low_pp": -4.3972,
+   "CI_high_pp": 0.3058,
+   "N_seed": 3,
+   "CI_method": "identity-cluster bootstrap, percentile 2.5/97.5; 16 identity clusters, B=10000, seed=20260917 (30 repeated conditions averaged)",
+   "Result_status": "FINAL",
+   "Source_file": "reports/H2_EVALUATION_RESULT.json",
+   "Source_field": "convnext_replication.per_metric.rank1_query_weighted.H2a_point_estimate / H2a_ci95",
+   "Source_sha256": "bc51ca2f4c6e674ef4e7ddbcec8a5123c35956301c65065a55de4a4ea6a5f9be",
+   "Notes": "regime g1. Replication scope only; does NOT enter the MobileNet primary decision; NOT a dual-backbone claim.",
+   "effect_direction": "NEGATIVE",
+   "CI_excludes_zero": "NO"
+  },
+  {
+   "Dataset": "CFF",
+   "Global_representation": "MobileNetV2 ImageNet1K_V2 + ArcFace + CE (128-D)",
+   "Delta_R1_pp": 3.744,
+   "CI_low_pp": 2.3397,
+   "CI_high_pp": 5.2535,
+   "N_seed": 3,
+   "CI_method": "identity-cluster bootstrap, 95% percentile; B=10000, seed=20260922",
+   "Result_status": "FINAL",
+   "Source_file": "analysis/stage_p3c/CFF_EXTERNAL_PRIMARY_EVALUATION_RESULT.json",
+   "Source_field": "delta_r1 / bootstrap.ci95",
+   "Source_sha256": "0c190662a0434f7b8524fbe38cbc11ba4c6f9d20ebd42e3cbc95cd9d78ede9d6",
+   "Notes": "mean over the 3 global seeds; gate supported=True. Claim label: independent-dataset, identity-disjoint, new-domain fitted replication (NOT zero-shot).",
+   "effect_direction": "POSITIVE",
+   "CI_excludes_zero": "YES"
+  },
+  {
+   "Dataset": "CFF",
+   "Global_representation": "convnext_tiny.dinov3_lvd1689m",
+   "Delta_R1_pp": 22.8865,
+   "CI_low_pp": 19.4848,
+   "CI_high_pp": 26.2262,
+   "N_seed": 3,
+   "CI_method": "identity-cluster bootstrap, 95% percentile; B=10000, seed=20260922",
+   "Result_status": "FINAL",
+   "Source_file": "analysis/stage_p4c/P4C_MODERN_GLOBAL_RESULT.json",
+   "Source_field": "contrast_C.effect / contrast_C.ci95",
+   "Source_sha256": "6736f72697588f581ae50564eb904d2f6f44a95db99e157a47699850631dffb7",
+   "Notes": "Contrast C = mean_seed[R1_Fusion - R1_DINOv3]. CI read directly from the stored contrast_C.ci95 - NOT derived from the three per-seed differences. case=D; DINOv3 NOT shown stronger than MobileNet.",
+   "effect_direction": "POSITIVE",
+   "CI_excludes_zero": "YES"
+  }
+ ],
+ "dino_ci_source": "P4C contrast_C.ci95 (read, not derived)",
+ "sha256": {
+  "H2": "bc51ca2f4c6e674ef4e7ddbcec8a5123c35956301c65065a55de4a4ea6a5f9be",
+  "P3C": "0c190662a0434f7b8524fbe38cbc11ba4c6f9d20ebd42e3cbc95cd9d78ede9d6",
+  "P4C": "6736f72697588f581ae50564eb904d2f6f44a95db99e157a47699850631dffb7"
+ }
+}

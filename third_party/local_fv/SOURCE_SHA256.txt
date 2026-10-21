@@ -1,0 +1,21 @@
+﻿da1368a7cfc7560cf5f64f4d8f8e009c2c7c7a2dea516c56c2dcb29e238d3e05  3689  HardNet.py
+8ce9c80b71249aabe03a65ac8adcb585382a4cfc98def24e038cda3038beaa3a  37054  architectures.py
+ab7ca89f8913960ad058cc3595769d12a11ddacdb9148cac3a1bc5b79a2244e8  13579  HandCraftedModules.py
+50d7d943b3103952e62e1b4ed8b4717ee3c807a81b4dc56d5344c14e3e19174b  4012  HessianAffinePatches.py
+00ebd40795300935c4635b9f7aa68ca646e7e81bd2dac67ecf8782add5ebebb2  18177  LAF.py
+a5d8b537d46cb2ce2960ea09aec3df1b57c408738aa0e017bed935bc1eedcc69  11252  SparseImgRepresenter.py
+13d4c34da15ec06e5181e5c75cf502c11a73b08261d950a4fc49bd28625b2288  6426  Utils.py
+15864353a1a732bc896226de53c05ca4f0d90cf91b22ffb79b3cfc953091357a  6991  ReprojectonStuff.py
+6c4c8bf368b79905221cdfbc20770719dd3160e6536b249037af1c41ad369eaf  4924  pytorch_sift.py
+3941a8c96368f1618337a7fd60afe4a2d2807747e1fc9f334301230d1ae16716  1240  README.md
+src_root=D:\复现论文\Norppa\reidentification\hesaff_pytorch
+architectures.py
+HandCraftedModules.py
+HardNet.py
+HessianAffinePatches.py
+LAF.py
+pytorch_sift.py
+README.md
+ReprojectonStuff.py
+SparseImgRepresenter.py
+Utils.py

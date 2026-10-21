@@ -1,0 +1,91 @@
+{
+ "protocol": {
+  "design": "independent-of-development single-session external evaluation",
+  "identity_labels": "human-verified: 44 videos = 44 distinct cows",
+  "independence_statement": "The 44 videos were not used for model training, feature fitting, parameter selection or method development.",
+  "gallery_rule": "6 frames, t in [0.05,0.35]",
+  "query_rule": "6 frames, t in [0.65,0.95]",
+  "buffer": "t in (0.35,0.65) excluded",
+  "n_identities": 44,
+  "n_gallery": 264,
+  "n_query": 264,
+  "fusion": "0.5*S_G + 0.5*S_L (cosine), identity score = max over gallery, tie optimistic",
+  "global_model": "MobileNetV2-ArcFace 128-D @112, seeds 42/43/44 (frozen)",
+  "local_model": "HesAffNet+HardNet++ Top-64 -> frozen PCA32/GMM16 FV 1024-D",
+  "codebook": "local_fv_pca32_gmm16_nowhiten_pool256_shared.npz (loaded, not refitted)",
+  "detector": "DET1 best.pt, imgsz 640, conf 0.25, iou 0.70"
+ },
+ "rank1": {
+  "global": 0.5694444444444444,
+  "local": 0.6325757575757576,
+  "fusion": 0.7196969696969697
+ },
+ "macro_rank1": {
+  "global": 0.5694444444444443,
+  "local": 0.6325757575757576,
+  "fusion": 0.7196969696969697
+ },
+ "mrr": {
+  "global": 0.6666926007573147,
+  "local": 0.709376747756305,
+  "fusion": 0.786202646580569
+ },
+ "delta_rank1_fusion_minus_global_pp": 15.0253,
+ "delta_per_seed_pp": {
+  "42": 16.6667,
+  "43": 13.2576,
+  "44": 15.1515
+ },
+ "stratified_seed42": {
+  "detector_fired": {
+   "n_query": 7,
+   "rank1_global": 0.42857142857142855,
+   "rank1_local": 0.2857142857142857,
+   "rank1_fusion": 0.42857142857142855,
+   "mrr_fusion": 0.446720227970228,
+   "seed": 42
+  },
+  "full_frame_fallback": {
+   "n_query": 257,
+   "rank1_global": 0.5369649805447471,
+   "rank1_local": 0.642023346303502,
+   "rank1_fusion": 0.708171206225681,
+   "mrr_fusion": 0.7830837254903082,
+   "seed": 42
+  },
+  "fallback_sharp": {
+   "n_query": 131,
+   "rank1_global": 0.6335877862595419,
+   "rank1_local": 0.7251908396946565,
+   "rank1_fusion": 0.8015267175572519,
+   "mrr_fusion": 0.8522011976286158,
+   "seed": 42
+  },
+  "fallback_blurry": {
+   "n_query": 126,
+   "rank1_global": 0.4365079365079365,
+   "rank1_local": 0.5555555555555556,
+   "rank1_fusion": 0.6111111111111112,
+   "mrr_fusion": 0.7112234965211154,
+   "seed": 42
+  }
+ },
+ "duplicate_pair_sensitivity": {
+  "note": "mechanical sensitivity only: 033-036 are byte-identical copies of 029-032",
+  "forty_identity_candidates": {
+   "n_query": 240,
+   "rank1_global": 0.5986,
+   "rank1_local": 0.6583,
+   "rank1_fusion": 0.7347,
+   "delta_pp": 13.61
+  },
+  "forty_four_identity_candidates": {
+   "n_query": 264,
+   "rank1_global": 0.5694,
+   "rank1_local": 0.6326,
+   "rank1_fusion": 0.7197,
+   "delta_pp": 15.03
+  }
+ },
+ "identity_coverage": "44/44 (100%)"
+}

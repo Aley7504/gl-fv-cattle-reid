@@ -1,0 +1,122 @@
+{
+ "bootstrap": {
+  "unit": "identity cluster",
+  "n_clusters": 16,
+  "n_boot": 10000,
+  "seed": 20260917,
+  "note": "CI of the ABSOLUTE Rank-1 of each condition, resampling the 16 holdout identities"
+ },
+ "regimes": {
+  "g1": {
+   "Global": {
+    "rank1": 0.3121,
+    "ci95": [
+     0.2433,
+     0.3957
+    ],
+    "per_seed": {
+     "42": 0.2556,
+     "43": 0.3444,
+     "44": 0.3364
+    },
+    "n_conditions": 30
+   },
+   "Local": {
+    "rank1": 0.2737,
+    "ci95": [
+     0.1971,
+     0.348
+    ],
+    "per_seed": "seed-independent",
+    "n_conditions": 10
+   },
+   "Fusion": {
+    "rank1": 0.371,
+    "ci95": [
+     0.2881,
+     0.4592
+    ],
+    "per_seed": {
+     "42": 0.3242,
+     "43": 0.397,
+     "44": 0.3919
+    },
+    "n_conditions": 30
+   }
+  },
+  "g3": {
+   "Global": {
+    "rank1": 0.3734,
+    "ci95": [
+     0.2803,
+     0.4824
+    ],
+    "per_seed": {
+     "42": 0.303,
+     "43": 0.404,
+     "44": 0.4131
+    },
+    "n_conditions": 30
+   },
+   "Local": {
+    "rank1": 0.4434,
+    "ci95": [
+     0.3378,
+     0.546
+    ],
+    "per_seed": "seed-independent",
+    "n_conditions": 10
+   },
+   "Fusion": {
+    "rank1": 0.5064,
+    "ci95": [
+     0.4,
+     0.6182
+    ],
+    "per_seed": {
+     "42": 0.4414,
+     "43": 0.5313,
+     "44": 0.5465
+    },
+    "n_conditions": 30
+   }
+  },
+  "full": {
+   "Global": {
+    "rank1": 0.3973,
+    "ci95": [
+     0.2826,
+     0.5278
+    ],
+    "per_seed": {
+     "42": 0.3232,
+     "43": 0.4545,
+     "44": 0.4141
+    },
+    "n_conditions": 30
+   },
+   "Local": {
+    "rank1": 0.5556,
+    "ci95": [
+     0.4234,
+     0.6709
+    ],
+    "per_seed": "seed-independent",
+    "n_conditions": 10
+   },
+   "Fusion": {
+    "rank1": 0.5522,
+    "ci95": [
+     0.4135,
+     0.6947
+    ],
+    "per_seed": {
+     "42": 0.4848,
+     "43": 0.5758,
+     "44": 0.596
+    },
+    "n_conditions": 30
+   }
+  }
+ }
+}

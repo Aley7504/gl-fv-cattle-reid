@@ -1,0 +1,11 @@
+torch==2.7.1
+torchvision==0.22.1
+ultralytics==8.4.157
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+scikit-image>=0.21
+opencv-python>=4.8
+pillow>=10.0
+matplotlib>=3.7
+threadpoolctl>=3.1

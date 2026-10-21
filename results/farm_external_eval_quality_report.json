@@ -1,0 +1,74 @@
+{
+ "n_frames": 528,
+ "n_videos": 44,
+ "n_identities": 44,
+ "detector": {
+  "fired": 35,
+  "fired_rate": 0.06628787878787878,
+  "fallback": 493,
+  "fallback_rate": 0.9337121212121212
+ },
+ "zero_descriptor": {
+  "n": 0,
+  "rate": 0.0
+ },
+ "descriptors_per_image": {
+  "mean": 62.02651515151515,
+  "min": 23,
+  "max": 64
+ },
+ "blur": {
+  "median": 726.2129262036673,
+  "p10": 388.36266905824016,
+  "p90": 1150.4251137458286,
+  "min": 13.405391438707147
+ },
+ "brightness": {
+  "mean": 110.37336675786196,
+  "min": 90.92509178905208,
+  "max": 151.4249382854578
+ },
+ "multi_cattle": {
+  "status": "present in every sampled frame (44/44); automated box census impossible (DET1 >=2 boxes: 0 frames)",
+  "measurable_contrast": false
+ },
+ "occlusion": {
+  "status": "feed-bunk rails cross the face region in all frames; not quantified per frame",
+  "measurable_contrast": false
+ },
+ "stratified_seed42": {
+  "detector_fired": {
+   "n_query": 7,
+   "rank1_global": 0.42857142857142855,
+   "rank1_local": 0.2857142857142857,
+   "rank1_fusion": 0.42857142857142855,
+   "mrr_fusion": 0.446720227970228,
+   "seed": 42
+  },
+  "full_frame_fallback": {
+   "n_query": 257,
+   "rank1_global": 0.5369649805447471,
+   "rank1_local": 0.642023346303502,
+   "rank1_fusion": 0.708171206225681,
+   "mrr_fusion": 0.7830837254903082,
+   "seed": 42
+  },
+  "fallback_sharp": {
+   "n_query": 131,
+   "rank1_global": 0.6335877862595419,
+   "rank1_local": 0.7251908396946565,
+   "rank1_fusion": 0.8015267175572519,
+   "mrr_fusion": 0.8522011976286158,
+   "seed": 42
+  },
+  "fallback_blurry": {
+   "n_query": 126,
+   "rank1_global": 0.4365079365079365,
+   "rank1_local": 0.5555555555555556,
+   "rank1_fusion": 0.6111111111111112,
+   "mrr_fusion": 0.7112234965211154,
+   "seed": 42
+  }
+ },
+ "residual_risk": "uniform attributes cannot be stratified; their effect is not estimable from this session"
+}

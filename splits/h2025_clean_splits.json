@@ -3372,7 +3372,7 @@
   "identities_dropped_no_2dates": 2,
   "images_dropped_no_capture_date": 133,
   "holdout_gap_days_min": 2,
-  "holdout_gap_days_median": 21,
+  "holdout_gap_days_median": 18.5,
   "holdout_gap_days_max": 22,
   "train_pool_capture_date_span": [
    "2025-03-26",

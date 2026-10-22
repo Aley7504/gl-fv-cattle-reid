@@ -18,11 +18,11 @@ the two public datasets (see **Data** below).
 
 | Path | Contents |
 |---|---|
-| `code/` | The evaluation pipeline exactly as frozen for the paper: global training, Hessian-affine/HardNet description, Fisher-Vector encoding, scoring, H2 evaluation, bootstrap inference, and the five scripts used for the post-hoc audits (absolute metrics, ablations, absolute CIs, farm detector diagnosis, and the farm strata reconciliation that ties the stratified breakdown to the headline numbers). |
+| `code/` | The evaluation pipeline exactly as frozen for the paper: global training, Hessian-affine/HardNet description, Fisher-Vector encoding, scoring, H2 evaluation, bootstrap inference, and the six scripts used for the post-hoc audits (absolute metrics, ablations, absolute CIs, farm detector diagnosis, the farm strata reconciliation, and the farm region-of-interest rule comparison). |
 | `configs/` | Frozen Fisher-Vector codebook (PCA-32 / GMM-16, `whiten=False`, 1024-D) and its provenance metadata. |
 | `splits/` | The custom 56/8/16 identity partition of the filtered Holstein2025 subset, and the ten frozen gallery realizations. |
 | `models/` | Three frozen MobileNetV2-ArcFace global checkpoints (seeds 42/43/44, 128-D, 112x112) with their configs. |
-| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, farm evaluation, detector diagnosis, and the farm strata reconciliation). |
+| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, the farm evaluation of the **deployed** configuration, the same evaluation under the detector configuration kept for diagnosis, the detector failure-mode diagnosis, the farm strata reconciliation and the farm region-of-interest rule comparison). |
 | `manifests/` | Per-frame manifest for the 528 farm frames (identity, session, gallery/query role, frame index, ROI flags). |
 | `third_party/` | Vendored HesAffNet/HardNet++ PyTorch code (see provenance note inside). Not written by the authors. |
 | `artifacts/` | `farm_frames_528.zip` — the 528 farm frames plus the manifest. **Not tracked by git**; archived on Zenodo as three part archives, see **Data** below. |
@@ -64,6 +64,9 @@ python code/ablation_from_frozen.py
 
 # 4. farm detector failure-mode diagnosis
 python code/farm_detector_diagnosis.py
+
+# 5. farm region-of-interest rules: comparison + consistency checks
+python code/farm_roi_rule_comparison.py
 ```
 
 Each script prints its numbers and writes a JSON file; the values in the manuscript can be read
@@ -100,9 +103,11 @@ directly from `results/`.
 * The H2025 numbers come from a **custom filtered re-analysis** of a public release, not from a fully
   confirmatory, pre-registered analysis. Absolute metrics in `results/` were recomputed from the frozen
   per-query ranks and reproduce the published contrasts exactly.
-* The farm evaluation is a **single-session, within-clip probe**: gallery and query frames of an identity
-  come from the same recording, so the contrast measures within-clip discrimination, not cross-session or
-  cross-day generalisation.
+* The farm evaluation comes from a **single acquisition session**: gallery and query frames of an identity
+  come from the same recording, so the contrast measures within-clip discrimination. The deployed
+  configuration uses a fixed bottom-centre region of interest and therefore carries **no face detector**;
+  `results/farm_roi_rule_comparison.json` reports the two detector-based alternatives we measured on the
+  same material, together with the checks that make the diagnostic numbers verifiable.
 * No on-device latency, energy or thermal measurements were made.
 
 ---

@@ -1,0 +1,71 @@
+{
+ "n_identities": 44,
+ "n_frames": 528,
+ "n_queries": 264,
+ "rules": {
+  "V1_frozen_face_detector": {
+   "region_rule": "DET1 -> full-frame fallback",
+   "rank1": {
+    "global": 0.5694,
+    "local": 0.6326,
+    "fusion": 0.7197
+   },
+   "delta_pp": 15.0253,
+   "ci95_pp": [
+    9.4697,
+    20.5808
+   ],
+   "face_detection_rate": 0.066,
+   "role": "diagnostic configuration (Supplementary Note S3)"
+  },
+  "V3_fixed_window_deployed": {
+   "region_rule": "FARM-ROI-V3: fixed bottom-centre window (x 0.15-0.85, y 0.45-1.00); no learned detector in the loop",
+   "rank1": {
+    "global": 0.4545,
+    "local": 0.5492,
+    "fusion": 0.6098
+   },
+   "delta_pp": 15.5303,
+   "ci95_pp": [
+    9.3434,
+    21.8434
+   ],
+   "roi_availability": 1.0,
+   "role": "deployed configuration (Section 4.4)"
+  }
+ },
+ "v2_animal_box": {
+  "region_rule": "DET1 -> COCO 'cow' box -> full frame",
+  "rank1": {
+   "global": 0.4003,
+   "local": 0.4432,
+   "fusion": 0.4634
+  },
+  "delta_pp": 6.3131,
+  "ci95_pp": [
+   1.2626,
+   11.2374
+  ],
+  "animal_localisation_rate": 0.941,
+  "role": "rejected: the region crops away the barn context the global branch uses"
+ },
+ "detection_diagnosis": {
+  "frames_without_candidate_at_conf_0.05": null,
+  "probe_detection_rate": {
+   "imgsz640": 0.25,
+   "imgsz960": 0.25,
+   "imgsz1280": 0.318,
+   "tile480": 0.045,
+   "tile360": 0.091,
+   "tile280": 0.023
+  }
+ },
+ "checks": {
+  "v1_strata_partition": true,
+  "v1_count_weighted_fusion": 0.700758,
+  "v1_stratum_delta_pp": -27.96,
+  "v3_blur_split_recombines_to": 0.625,
+  "v3_seed42_overall_fusion": 0.625,
+  "v3_blur_gap_pp": 11.18
+ }
+}

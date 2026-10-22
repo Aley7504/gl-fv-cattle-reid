@@ -13,60 +13,60 @@
   "global_model": "MobileNetV2-ArcFace 128-D @112, seeds 42/43/44 (frozen)",
   "local_model": "HesAffNet+HardNet++ Top-64 -> frozen PCA32/GMM16 FV 1024-D",
   "codebook": "local_fv_pca32_gmm16_nowhiten_pool256_shared.npz (loaded, not refitted)",
-  "detector": "DET1 best.pt, imgsz 640, conf 0.25, iou 0.70"
+  "detector": "DET1 best.pt, imgsz 640, conf 0.25, iou 0.70",
+  "region_rule": "FARM-ROI-V3: fixed bottom-centre window (x 0.15-0.85, y 0.45-1.00); no learned detector in the loop",
+  "roi_availability": 1.0,
+  "roi_window_fraction": [
+   0.15,
+   0.85,
+   0.45,
+   1.0
+  ]
  },
  "rank1": {
-  "global": 0.5694444444444444,
-  "local": 0.6325757575757576,
-  "fusion": 0.7196969696969697
+  "global": 0.4545454545454546,
+  "local": 0.5492424242424242,
+  "fusion": 0.6098484848484849
  },
  "macro_rank1": {
-  "global": 0.5694444444444443,
-  "local": 0.6325757575757576,
-  "fusion": 0.7196969696969697
+  "global": 0.45454545454545453,
+  "local": 0.5492424242424243,
+  "fusion": 0.6098484848484849
  },
  "mrr": {
-  "global": 0.6666926007573147,
-  "local": 0.709376747756305,
-  "fusion": 0.786202646580569
+  "global": 0.5811375118990446,
+  "local": 0.6358599804100757,
+  "fusion": 0.6985152184113556
  },
- "delta_rank1_fusion_minus_global_pp": 15.0253,
+ "delta_rank1_fusion_minus_global_pp": 15.5303,
  "delta_per_seed_pp": {
-  "42": 16.6667,
-  "43": 13.2576,
-  "44": 15.1515
+  "42": 18.1818,
+  "43": 16.2879,
+  "44": 12.1212
  },
  "stratified_seed42": {
-  "detector_fired": {
-   "n_query": 7,
-   "rank1_global": 0.42857142857142855,
-   "rank1_local": 0.2857142857142857,
-   "rank1_fusion": 0.42857142857142855,
-   "mrr_fusion": 0.446720227970228,
+  "all_queries": {
+   "n_query": 264,
+   "rank1_global": 0.4431818181818182,
+   "rank1_local": 0.5492424242424242,
+   "rank1_fusion": 0.625,
+   "mrr_fusion": 0.7013414407545422,
    "seed": 42
   },
-  "full_frame_fallback": {
-   "n_query": 257,
-   "rank1_global": 0.5369649805447471,
-   "rank1_local": 0.642023346303502,
-   "rank1_fusion": 0.708171206225681,
-   "mrr_fusion": 0.7830837254903082,
+  "sharper": {
+   "n_query": 129,
+   "rank1_global": 0.4806201550387597,
+   "rank1_local": 0.6356589147286822,
+   "rank1_fusion": 0.6821705426356589,
+   "mrr_fusion": 0.7562964253661929,
    "seed": 42
   },
-  "fallback_sharp": {
-   "n_query": 131,
-   "rank1_global": 0.6335877862595419,
-   "rank1_local": 0.7251908396946565,
-   "rank1_fusion": 0.8015267175572519,
-   "mrr_fusion": 0.8522011976286158,
-   "seed": 42
-  },
-  "fallback_blurry": {
-   "n_query": 126,
-   "rank1_global": 0.4365079365079365,
-   "rank1_local": 0.5555555555555556,
-   "rank1_fusion": 0.6111111111111112,
-   "mrr_fusion": 0.7112234965211154,
+  "blurrier": {
+   "n_query": 135,
+   "rank1_global": 0.4074074074074074,
+   "rank1_local": 0.4666666666666667,
+   "rank1_fusion": 0.5703703703703704,
+   "mrr_fusion": 0.6488288999034095,
    "seed": 42
   }
  },
@@ -74,17 +74,17 @@
   "note": "mechanical sensitivity only: 033-036 are byte-identical copies of 029-032",
   "forty_identity_candidates": {
    "n_query": 240,
-   "rank1_global": 0.5986,
-   "rank1_local": 0.6583,
-   "rank1_fusion": 0.7347,
-   "delta_pp": 13.61
+   "rank1_global": 0.4764,
+   "rank1_local": 0.5667,
+   "rank1_fusion": 0.6361,
+   "delta_pp": 15.97
   },
   "forty_four_identity_candidates": {
    "n_query": 264,
-   "rank1_global": 0.5694,
-   "rank1_local": 0.6326,
-   "rank1_fusion": 0.7197,
-   "delta_pp": 15.03
+   "rank1_global": 0.4545,
+   "rank1_local": 0.5492,
+   "rank1_fusion": 0.6098,
+   "delta_pp": 15.53
   }
  },
  "identity_coverage": "44/44 (100%)"

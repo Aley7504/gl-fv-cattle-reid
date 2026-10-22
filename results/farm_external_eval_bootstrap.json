@@ -1,9 +1,9 @@
 {
  "design": "exploratory interval within a single acquisition session",
- "estimate_pp": 15.0253,
+ "estimate_pp": 15.5303,
  "ci95_pp": [
-  9.4697,
-  20.5808
+  9.3434,
+  21.8434
  ],
  "n_identity_clusters": 44,
  "n_bootstrap": 10000,

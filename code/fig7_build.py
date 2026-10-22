@@ -40,13 +40,49 @@ def ck_params(p):
     return sum(v.numel() for v in sd.values() if hasattr(v, "numel"))
 
 
+def ck_params_deployed(p):
+    """Parameter count excluding the ArcFace classifier, which is training-only.
+
+    The classifier is a single top-level `weight` of shape (n_train_ids, 128); it differs
+    between the H2025 (56 identities) and CFF (153 identities) runs, so counting it would
+    make the deployed network look different across protocols when it is in fact identical.
+    """
+    ck = torch.load(p, map_location="cpu", weights_only=False)
+    sd = ck.get("state_dict") if isinstance(ck, dict) else None
+    if sd is None:
+        sd = ck
+    total = sum(v.numel() for v in sd.values() if hasattr(v, "numel"))
+    head = 0
+    w = sd.get("weight")
+    if w is not None and getattr(w, "ndim", 0) == 2 and w.shape[1] == 128:
+        head = w.numel()
+    return total - head, head
+
+
 ours_ckpt = os.path.join(P, "analysis", "stage_p3b", "runs", "fold0_s42", "best.pt")
 hu_ckpt = os.path.join(A, "03_P5B_FORMAL_RUNS", "fold0_s42", "best.pt")
-p_ours = ck_params(ours_ckpt)
+p_ours, n_head_ours = ck_params_deployed(ours_ckpt)
 p_hu = ck_params(hu_ckpt)
 p_dino = json.load(open(os.path.join(P, "analysis", "stage_p4a",
                                      "P4A_INPUT_SEAL.json"),
                         encoding="utf-8"))["modern_global"]["parameter_count"]
+
+# ---- full-system accounting for our method -------------------------------------
+# The global checkpoint above is only the trained branch.  The deployed GL-FVF system
+# additionally carries the frozen HesAffNet (AffNet + OriNet) and HardNet++ networks and
+# the fitted PCA-32/GMM-16 encoder.  Counting only the backbone understates our own
+# footprint, so the bar plots the full deployed total; the split is recorded in the JSON.
+LOCAL_W = r"D:\复现论文\reproduction\models"
+p_local = sum(ck_params(os.path.join(LOCAL_W, f))
+              for f in ("AffNet.pth", "OriNet.pth", "HardNet++.pth"))
+_cb = np.load(r"D:\CowReID_Paper\release\gl-fv-cattle-reid\configs"
+              r"\local_fv_pca32_gmm16_nowhiten_pool256_shared.npz", allow_pickle=True)
+p_fv = int(_cb["center"].size + _cb["components"].size + _cb["means"].size
+           + _cb["variances"].size + _cb["weights"].size)
+p_ours_total = p_ours + p_local + p_fv
+print("ours: deployed global %s (train-only ArcFace head %s) + local %s + fv %s = %s"
+      % (format(p_ours, ","), format(n_head_ours, ","), format(p_local, ","),
+         format(p_fv, ","), format(p_ours_total, ",")))
 
 # training wall clock
 p3b = json.load(open(os.path.join(P, "analysis", "stage_p3b",
@@ -84,8 +120,8 @@ if SKILL_SCRIPTS not in sys.path:
 FIG_W = 165 / 25.4
 fig, axes = plt.subplots(1, 2, figsize=(FIG_W, 2.55), dpi=300)
 
-labels = ["Ours\n(MobileNetV2)", "DINOv3", "Hu2025\n(MobileViT-x-S)"]
-params = [p_ours, p_dino, p_hu]
+labels = ["Ours\n(MobileNetV2+FV)", "DINOv3", "Hu2025\n(MobileViT-x-S)"]
+params = [p_ours_total, p_dino, p_hu]
 cols = ["#2E7D32", "#1565C0", "#B71C1C"]
 
 ax = axes[0]
@@ -178,7 +214,9 @@ print("WROTE", tif, "(600 dpi)")
 print("WROTE", pdf)
 print("WROTE", svg)
 
-json.dump({"ours_params": p_ours, "dino_params": p_dino, "hu_params": p_hu,
+json.dump({"ours_params": p_ours_total, "ours_global_params": p_ours, "ours_train_only_head": n_head_ours,
+           "ours_local_frozen_params": p_local, "ours_fv_codebook_params": p_fv,
+           "dino_params": p_dino, "hu_params": p_hu,
            "ours_sec_per_epoch": w_ours / ep_ours, "hu_sec_per_epoch": w_hu / ep_hu,
            "ours_epochs": ep_ours, "hu_epochs": ep_hu,
            "ours_batch": 64, "hu_batch": 4,

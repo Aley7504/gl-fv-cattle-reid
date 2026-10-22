@@ -1,0 +1,53 @@
+{
+ "source": "farm_external_eval_metrics.json (frozen)",
+ "n_queries": 264,
+ "arms_seed42": [
+  {
+   "arm": "global",
+   "n_fallback": 257,
+   "n_fired": 7,
+   "r1_fallback": 0.5369649805447471,
+   "r1_fired": 0.42857142857142855,
+   "r1_seed42_weighted": 0.5340909090909091
+  },
+  {
+   "arm": "local",
+   "n_fallback": 257,
+   "n_fired": 7,
+   "r1_fallback": 0.642023346303502,
+   "r1_fired": 0.2857142857142857,
+   "r1_seed42_weighted": 0.6325757575757576
+  },
+  {
+   "arm": "fusion",
+   "n_fallback": 257,
+   "n_fired": 7,
+   "r1_fallback": 0.708171206225681,
+   "r1_fired": 0.42857142857142855,
+   "r1_seed42_weighted": 0.7007575757575758
+  }
+ ],
+ "checks": {
+  "strata_partition_exact": true,
+  "seed42_delta_recomputed_pp": 16.6667,
+  "seed42_delta_stored_pp": 16.6667,
+  "seed42_delta_abs_diff_pp": 3.3e-05,
+  "local_seed42_weighted": 0.632576,
+  "local_stored_overall": 0.632576,
+  "local_abs_diff": 0.0,
+  "blur_split_recombines_to_fallback": 0.708171,
+  "fallback_fusion_seed42": 0.708171,
+  "blur_split_abs_diff": 0.0,
+  "blur_split_gap_pp": 19.04
+ },
+ "headline_three_seed_mean": {
+  "global": 0.569444,
+  "local": 0.632576,
+  "fusion": 0.719697
+ },
+ "conclusion": "The stratified rows are a complete partition of the 264 queries for seed 42 and reproduce the seed-42 overall accuracies exactly. The headline 0.7197 is the mean over seeds 42/43/44; the seed-42 fused value is 0.7008. The 72.0% vs 70.1% difference is therefore an aggregation-level difference, not a data inconsistency. Strata for seeds 43 and 44 cannot be recovered because the per-query score matrices were not persisted.",
+ "not_recoverable": [
+  "per-query scores for seeds 43 and 44 (per-seed stratified accuracies)",
+  "per-query identifiers (only aggregate counts and accuracies were persisted)"
+ ]
+}

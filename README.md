@@ -18,11 +18,11 @@ the two public datasets (see **Data** below).
 
 | Path | Contents |
 |---|---|
-| `code/` | The evaluation pipeline exactly as frozen for the paper: global training, Hessian-affine/HardNet description, Fisher-Vector encoding, scoring, H2 evaluation, bootstrap inference, and the four scripts used for the post-hoc audits (absolute metrics, ablations, absolute CIs, farm detector diagnosis). |
+| `code/` | The evaluation pipeline exactly as frozen for the paper: global training, Hessian-affine/HardNet description, Fisher-Vector encoding, scoring, H2 evaluation, bootstrap inference, and the five scripts used for the post-hoc audits (absolute metrics, ablations, absolute CIs, farm detector diagnosis, and the farm strata reconciliation that ties the stratified breakdown to the headline numbers). |
 | `configs/` | Frozen Fisher-Vector codebook (PCA-32 / GMM-16, `whiten=False`, 1024-D) and its provenance metadata. |
 | `splits/` | The custom 56/8/16 identity partition of the filtered Holstein2025 subset, and the ten frozen gallery realizations. |
 | `models/` | Three frozen MobileNetV2-ArcFace global checkpoints (seeds 42/43/44, 128-D, 112x112) with their configs. |
-| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, farm evaluation, detector diagnosis). |
+| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, farm evaluation, detector diagnosis, and the farm strata reconciliation). |
 | `manifests/` | Per-frame manifest for the 528 farm frames (identity, session, gallery/query role, frame index, ROI flags). |
 | `third_party/` | Vendored HesAffNet/HardNet++ PyTorch code (see provenance note inside). Not written by the authors. |
 | `artifacts/` | `farm_frames_528.zip` — the 528 farm frames plus the manifest. **Not tracked by git**; archived on Zenodo as three part archives, see **Data** below. |

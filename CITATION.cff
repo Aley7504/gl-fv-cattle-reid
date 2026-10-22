@@ -17,8 +17,8 @@ keywords:
 license: MIT
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.23557354
-    description: "Archived code and frozen artefacts (v1.0.1)"
+    value: 10.5281/zenodo.23557711
+    description: "Archived code and frozen artefacts (v1.0.4)"
   - type: doi
     value: 10.5281/zenodo.23529142
     description: "528 labelled farm frames (v1.0.0)"

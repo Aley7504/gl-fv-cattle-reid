@@ -1,0 +1,88 @@
+{
+ "schema": "h2025_split_dup_audit/v1",
+ "created_at": "2026-10-16T15:15:22.839714",
+ "source_rows": 3915,
+ "audited": 2697,
+ "unreadable": [],
+ "partition_counts": {
+  "train": 2454,
+  "inner_val": 72,
+  "holdout": 171
+ },
+ "exact_cross_group_groups": 0,
+ "exact_examples": [],
+ "perceptual_thresholds": {
+  "dhash": 10,
+  "ahash": 6
+ },
+ "perceptual_cross_group_pairs": 5,
+ "perceptual_same_identity_pairs": 0,
+ "perceptual_serious_pairs": 0,
+ "perceptual_top": [
+  {
+   "g1": "holdout",
+   "g2": "train",
+   "k1": "datasets_v2/998230000007340/J40_2025.03.2623_13_44_manual_20250416_18340893_000013_obj0_cls0.jpg",
+   "k2": "datasets_v2/998230000006840/J42_2025.03.2623_13_55_manual_20250416_19244382_000013_obj0_cls0.jpg",
+   "dhash": 8,
+   "ahash": 6,
+   "same_identity": false
+  },
+  {
+   "g1": "holdout",
+   "g2": "train",
+   "k1": "datasets_v2/998230000007340/402-1-1-8(2).jpg",
+   "k2": "datasets_v2/998230000007347/326-2-4-3(3).jpg",
+   "dhash": 8,
+   "ahash": 6,
+   "same_identity": false
+  },
+  {
+   "g1": "inner_val",
+   "g2": "train",
+   "k1": "datasets_v2/998240000038175/417-1-9-6(2).jpg",
+   "k2": "datasets_v2/998240000037094/328-3-10-4(1).jpg",
+   "dhash": 9,
+   "ahash": 4,
+   "same_identity": false
+  },
+  {
+   "g1": "holdout",
+   "g2": "train",
+   "k1": "datasets_v2/998230000007340/J40_2025.03.2623_13_44_manual_20250416_18340893_000013_obj0_cls0.jpg",
+   "k2": "datasets_v2/998230000006732/J45_2025.03.2709_37_33_manual_20250417_13315853_000022_obj1_cls0.jpg",
+   "dhash": 10,
+   "ahash": 6,
+   "same_identity": false
+  },
+  {
+   "g1": "inner_val",
+   "g2": "train",
+   "k1": "datasets_v2/998240000037073/J29_2025.03.2709_37_33_manual_20250417_14312758_000001_obj3_cls0.jpg",
+   "k2": "datasets_v2/998230000006495/20250417162052_20250417162710_0067_cls0.jpg",
+   "dhash": 10,
+   "ahash": 6,
+   "same_identity": false
+  }
+ ],
+ "same_clip_cross_group_pairs": 0,
+ "same_clip_top": [],
+ "holdout_gallery_query_per_identity": {
+  "998230000006730": 0,
+  "998230000006756": 0,
+  "998230000006763": 0,
+  "998230000006769": 0,
+  "998230000006786": 0,
+  "998230000006959": 0,
+  "998230000007002": 0,
+  "998230000007012": 0,
+  "998230000007340": 0,
+  "998240000036520": 0,
+  "998240000036564": 0,
+  "998240000037017": 0,
+  "998240000037067": 0,
+  "998240000038164": 0,
+  "998240000050839": 0,
+  "998240000050883": 0
+ }
+}

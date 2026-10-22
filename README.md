@@ -22,8 +22,8 @@ the two public datasets (see **Data** below).
 | `configs/` | Frozen Fisher-Vector codebook (PCA-32 / GMM-16, `whiten=False`, 1024-D) and its provenance metadata. |
 | `splits/` | The custom 56/8/16 identity partition of the filtered Holstein2025 subset, and the ten frozen gallery realizations. |
 | `models/` | Three frozen MobileNetV2-ArcFace global checkpoints (seeds 42/43/44, 128-D, 112x112) with their configs. |
-| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, the farm evaluation of the **deployed** configuration, the same evaluation under the detector configuration kept for diagnosis, the detector failure-mode diagnosis, the farm strata reconciliation and the farm region-of-interest rule comparison). |
-| `manifests/` | Per-frame manifest for the 528 farm frames (identity, session, gallery/query role, frame index, ROI flags). |
+| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, the H2025 cross-split duplicate audit with its visual review sheet, the farm evaluation of the **deployed** configuration, the same evaluation under the detector configuration kept for diagnosis, the detector failure-mode diagnosis, the farm strata reconciliation and the farm region-of-interest rule comparison). |
+| `manifests/` | `h2025_clean_manifest.csv` - per-image manifest of the filtered H2025 subset (identity, capture date inferred from the source filename, gallery/query role, SHA-256, source clip) - and `farm_manifest_528.csv` - per-frame manifest for the 528 farm frames (identity, session, gallery/query role, frame index, ROI flags). |
 | `third_party/` | Vendored HesAffNet/HardNet++ PyTorch code (see provenance note inside). Not written by the authors. |
 | `artifacts/` | `farm_frames_528.zip` — the 528 farm frames plus the manifest. **Not tracked by git**; archived on Zenodo as three part archives, see **Data** below. |
 

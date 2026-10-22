@@ -9,7 +9,7 @@ Code, frozen artefacts and result files accompanying the manuscript
 This repository contains everything needed to re-derive the reported numbers, except the source images of
 the two public datasets (see **Data** below).
 
-**Archived releases** — code and frozen artefacts: [10.5281/zenodo.23551861](https://doi.org/10.5281/zenodo.23551861) (v1.0.1; concept DOI 10.5281/zenodo.23531193) ·
+**Archived releases** — code and frozen artefacts: [10.5281/zenodo.23556297](https://doi.org/10.5281/zenodo.23556297) (v1.0.2; concept DOI 10.5281/zenodo.23531193) ·
 528 farm frames: [10.5281/zenodo.23529142](https://doi.org/10.5281/zenodo.23529142)
 
 ---

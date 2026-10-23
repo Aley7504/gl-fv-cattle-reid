@@ -17,7 +17,7 @@ keywords:
 license: MIT
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.23557711
+    value: 10.5281/zenodo.23585335
     description: "Archived code and frozen artefacts (v1.0.4)"
   - type: doi
     value: 10.5281/zenodo.23529142

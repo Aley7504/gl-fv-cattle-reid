@@ -1,0 +1,165 @@
+{
+ "protocol": {
+  "backbone": "efficientnet_v2_s (torchvision IMAGENET1K_V1) + ArcFace(0.5, 30) + CE",
+  "imgsz": 224,
+  "micro_batch": 16,
+  "grad_accum": 4,
+  "effective_batch": 64,
+  "epochs": 20,
+  "lr": 0.0001,
+  "wd": 0.0001,
+  "optimizer": "AdamW",
+  "scheduler": "none",
+  "seeds": [
+   42,
+   43,
+   44
+  ],
+  "deviation": "BatchNorm running statistics over the micro-batch (16), not the effective batch (64); 4.29 GB VRAM cannot hold EfficientNetV2-S at 224 px with batch 64",
+  "local_branch": "frozen (same codebook, same descriptors) - only the global arm changes",
+  "test_identities": "frozen holdout (16 identities, 72 gallery, 99 query)",
+  "gallery_realizations": "frozen seeds 101-110",
+  "bootstrap": "identity-cluster, 16 clusters, B=10000, seed 20260917",
+  "run_ids": {
+   "42": "efficientnet_v2_s_s42_img224_emb128_mb16x4",
+   "43": "efficientnet_v2_s_s43_img224_emb128_mb16x4",
+   "44": "efficientnet_v2_s_s44_img224_emb128_mb16x4"
+  }
+ },
+ "metrics": {
+  "rank1_query_weighted": {
+   "H2a_g1": {
+    "point_estimate": 0.02424242424242425,
+    "ci95": [
+     -0.01062596006144393,
+     0.05490251782531192
+    ],
+    "decision": {
+     "rule": "estimate > 0 AND bootstrap 95% CI lower bound > 0",
+     "estimate": 0.02424242424242425,
+     "ci95_lower": -0.01062596006144393,
+     "supported": false,
+     "p_value_reported": false,
+     "note": "p 值不是本轮判据；Holm / Wilcoxon 均已退出推断（见勘误 T25–T34）。"
+    }
+   },
+   "H2b_T": -0.08350168350168354,
+   "per_regime": {
+    "g1": {
+     "delta": 0.02424242424242425,
+     "n_repeats": 30,
+     "n_positive": 18,
+     "n_negative": 6
+    },
+    "g3": {
+     "delta": 0.07878787878787878,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    },
+    "full": {
+     "delta": 0.10774410774410778,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    }
+   }
+  },
+  "macro_rank1_identity_balanced": {
+   "H2a_g1": {
+    "point_estimate": 0.0173189484126984,
+    "ci95": [
+     -0.013167348710317469,
+     0.04668687996031744
+    ],
+    "decision": {
+     "rule": "estimate > 0 AND bootstrap 95% CI lower bound > 0",
+     "estimate": 0.0173189484126984,
+     "ci95_lower": -0.013167348710317469,
+     "supported": false,
+     "p_value_reported": false,
+     "note": "p 值不是本轮判据；Holm / Wilcoxon 均已退出推断（见勘误 T25–T34）。"
+    }
+   },
+   "H2b_T": -0.06142609126984129,
+   "per_regime": {
+    "g1": {
+     "delta": 0.0173189484126984,
+     "n_repeats": 30,
+     "n_positive": 21,
+     "n_negative": 9
+    },
+    "g3": {
+     "delta": 0.04749999999999998,
+     "n_repeats": 30,
+     "n_positive": 27,
+     "n_negative": 3
+    },
+    "full": {
+     "delta": 0.0787450396825397,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    }
+   }
+  },
+  "identity_level_map_mrr": {
+   "H2a_g1": {
+    "point_estimate": 0.012068742611671937,
+    "ci95": [
+     -0.014364244450068417,
+     0.034685447731281044
+    ],
+    "decision": {
+     "rule": "estimate > 0 AND bootstrap 95% CI lower bound > 0",
+     "estimate": 0.012068742611671937,
+     "ci95_lower": -0.014364244450068417,
+     "supported": false,
+     "p_value_reported": false,
+     "note": "p 值不是本轮判据；Holm / Wilcoxon 均已退出推断（见勘误 T25–T34）。"
+    }
+   },
+   "H2b_T": -0.047289388968681886,
+   "per_regime": {
+    "g1": {
+     "delta": 0.012068742611671937,
+     "n_repeats": 30,
+     "n_positive": 20,
+     "n_negative": 10
+    },
+    "g3": {
+     "delta": 0.0430872349685481,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    },
+    "full": {
+     "delta": 0.05935813158035382,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    }
+   }
+  }
+ },
+ "absolute_rank1_per_condition": {
+  "global": {
+   "mean": 0.5450056116722783,
+   "n": 90,
+   "min": 0.30303030303030304,
+   "max": 0.6464646464646465
+  },
+  "fusion": {
+   "mean": 0.615263748597082,
+   "n": 90,
+   "min": 0.3333333333333333,
+   "max": 0.7373737373737373
+  },
+  "local": {
+   "mean": 0.4242424242424242,
+   "n": 90,
+   "min": 0.2222222222222222,
+   "max": 0.5555555555555556
+  }
+ }
+}

@@ -1,0 +1,257 @@
+{
+ "artefacts": {
+  "bootstrap_npz": "F:\\cow-project\\P5B_FORMAL_20260928\\p5c\\P5C_BOOTSTRAP.npz",
+  "evaluation_audit_json": "F:\\cow-project\\P5B_FORMAL_20260928\\p5c\\P5C_EVALUATION_AUDIT.json",
+  "metrics_json": "F:\\cow-project\\P5B_FORMAL_20260928\\p5c\\P5C_METRICS.json",
+  "per_query_outcomes_csv": "F:\\cow-project\\P5B_FORMAL_20260928\\p5c\\P5C_PER_QUERY_OUTCOMES.csv"
+ },
+ "created_at": "2026-09-30T11:29:57",
+ "design": {
+  "hu2025": "P5-B selected checkpoints + their PCA128 features (no retraining, no reselection, no PCA refit)",
+  "inference_unit": "identity cluster (256)",
+  "ours": "frozen P3-C Global+Local fusion, alpha = 0.5 (read, never recomputed)",
+  "same_protocol": {
+   "endpoint_images": 1872,
+   "feature": "post-PCA128 L2-normalized, cosine",
+   "gallery_images": 768,
+   "gallery_images_per_identity": 3,
+   "identities": 256,
+   "identity_score": "max over the identity's gallery images",
+   "no": [
+    "reranking",
+    "calibration",
+    "learned fusion",
+    "shortlist",
+    "pruning"
+   ],
+   "queries": 1104,
+   "scope": "per outer fold only; candidate libraries never merged",
+   "tie_rule": "optimistic (same frozen rule as P3-C)"
+  },
+  "seeds": [
+   42,
+   43,
+   44
+  ],
+  "seeds_are_not_paired_realizations": true
+ },
+ "evaluation_audit_verdict": "PASS",
+ "fold_wise_descriptive": {
+  "note": "descriptive only; NO significance test treats five folds as n = 5"
+ },
+ "inference_validation": {
+  "all_pass": true,
+  "ci_reproduced": true,
+  "cluster_order_note": "frozen order is grouped by fold; P5-C aligns by identity id before comparing, and the resampling itself is order-invariant",
+  "cluster_r1_fusion_exact": true,
+  "cluster_r1_global_exact": true,
+  "clusters_match": true,
+  "frozen_cluster_folds_unique": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "frozen_published_ci": [
+   0.0233970104538161,
+   0.05253527570026776
+  ],
+  "identity_set_equals_frozen": true,
+  "nq_match": true,
+  "reproduced_frozen_ci": [
+   0.02339701045381607,
+   0.052535275700267794
+  ],
+  "reproduced_frozen_draws_max_abs_diff": 9.71445146547012e-17
+ },
+ "interpretation_discipline": {
+  "comparator_added_after_p5c": false,
+  "direction_reported_as_returned": true,
+  "fusion_weight_tuned": false,
+  "methods_changed_after_p5c": false,
+  "pca_dimensionality_or_checkpoints_altered": false
+ },
+ "metrics": {
+  "hu_mean_seed": 0.9109299516908211,
+  "hu_per_fold_seed_descriptive": {
+   "fold0_s42": {
+    "macro_rank1": 0.9248846239230856,
+    "mrr": 0.9002636142122402,
+    "n_identities": 52,
+    "n_queries": 243,
+    "rank1": 0.8518518518518519
+   },
+   "fold0_s43": {
+    "macro_rank1": 0.9086758327142941,
+    "mrr": 0.9230217583382359,
+    "n_identities": 52,
+    "n_queries": 243,
+    "rank1": 0.8847736625514403
+   },
+   "fold0_s44": {
+    "macro_rank1": 0.9334940700325315,
+    "mrr": 0.9425211236758078,
+    "n_identities": 52,
+    "n_queries": 243,
+    "rank1": 0.9135802469135802
+   },
+   "fold1_s42": {
+    "macro_rank1": 0.9458061002178649,
+    "mrr": 0.968036272670419,
+    "n_identities": 51,
+    "n_queries": 220,
+    "rank1": 0.9545454545454546
+   },
+   "fold1_s43": {
+    "macro_rank1": 0.9255991285403051,
+    "mrr": 0.9668641774891774,
+    "n_identities": 51,
+    "n_queries": 220,
+    "rank1": 0.95
+   },
+   "fold1_s44": {
+    "macro_rank1": 0.9241051976346093,
+    "mrr": 0.9686829836829837,
+    "n_identities": 51,
+    "n_queries": 220,
+    "rank1": 0.9545454545454546
+   },
+   "fold2_s42": {
+    "macro_rank1": 0.920959595959596,
+    "mrr": 0.9349782386072709,
+    "n_identities": 51,
+    "n_queries": 217,
+    "rank1": 0.8986175115207373
+   },
+   "fold2_s43": {
+    "macro_rank1": 0.8783189033189034,
+    "mrr": 0.9109428951049129,
+    "n_identities": 51,
+    "n_queries": 217,
+    "rank1": 0.8663594470046083
+   },
+   "fold2_s44": {
+    "macro_rank1": 0.9503246753246753,
+    "mrr": 0.9531709457976739,
+    "n_identities": 51,
+    "n_queries": 217,
+    "rank1": 0.9262672811059908
+   },
+   "fold3_s42": {
+    "macro_rank1": 0.9761437908496733,
+    "mrr": 0.9806853582554518,
+    "n_identities": 51,
+    "n_queries": 214,
+    "rank1": 0.9672897196261683
+   },
+   "fold3_s43": {
+    "macro_rank1": 0.9045284780578898,
+    "mrr": 0.9408489096573209,
+    "n_identities": 51,
+    "n_queries": 214,
+    "rank1": 0.897196261682243
+   },
+   "fold3_s44": {
+    "macro_rank1": 0.9845938375350141,
+    "mrr": 0.9847352024922119,
+    "n_identities": 51,
+    "n_queries": 214,
+    "rank1": 0.9766355140186916
+   },
+   "fold4_s42": {
+    "macro_rank1": 0.8949494949494949,
+    "mrr": 0.9329973484435727,
+    "n_identities": 51,
+    "n_queries": 210,
+    "rank1": 0.9
+   },
+   "fold4_s43": {
+    "macro_rank1": 0.853501400560224,
+    "mrr": 0.8955781012359959,
+    "n_identities": 51,
+    "n_queries": 210,
+    "rank1": 0.8380952380952381
+   },
+   "fold4_s44": {
+    "macro_rank1": 0.9083722377840024,
+    "mrr": 0.9240631039078244,
+    "n_identities": 51,
+    "n_queries": 210,
+    "rank1": 0.8904761904761904
+   }
+  },
+  "hu_per_seed": {
+   "42": {
+    "macro_rank1": 0.9325187833000333,
+    "mrr": 0.942407994437193,
+    "n_identities": 256,
+    "n_queries": 1104,
+    "rank1": 0.9130434782608695
+   },
+   "43": {
+    "macro_rank1": 0.894181588810495,
+    "mrr": 0.9276196399346036,
+    "n_identities": 256,
+    "n_queries": 1104,
+    "rank1": 0.8876811594202898
+   },
+   "44": {
+    "macro_rank1": 0.9401518945464258,
+    "mrr": 0.9544996103764035,
+    "n_identities": 256,
+    "n_queries": 1104,
+    "rank1": 0.9320652173913043
+   }
+  },
+  "ours_mean_seed": 0.9426328502415459,
+  "ours_per_seed": {
+   "42": {
+    "macro_rank1": 0.9355085290143884,
+    "mrr": 0.9605801510940926,
+    "n_identities": 256,
+    "n_queries": 1104,
+    "rank1": 0.9393115942028986
+   },
+   "43": {
+    "macro_rank1": 0.9520975931620462,
+    "mrr": 0.9656625110894275,
+    "n_identities": 256,
+    "n_queries": 1104,
+    "rank1": 0.9465579710144928
+   },
+   "44": {
+    "macro_rank1": 0.9559309451399295,
+    "mrr": 0.9637634267389703,
+    "n_identities": 256,
+    "n_queries": 1104,
+    "rank1": 0.9420289855072463
+   }
+  }
+ },
+ "no_further_method_change_permitted": true,
+ "primary": {
+  "bootstrap": {
+   "B": 10000,
+   "ci": "95% percentile",
+   "ci95": [
+    0.014343366074212624,
+    0.04967808309593788
+   ],
+   "ci_contains_0": false,
+   "ci_lower_gt_0": true,
+   "seed": 20260922,
+   "unit": "identity cluster"
+  },
+  "delta_p5_rank1": 0.03170289855072472,
+  "estimand": "delta_P5 = mean_seed(R1_Ours) - mean_seed(R1_Hu2025)"
+ },
+ "ruling": "P5-C FORMAL SAME-PROTOCOL COMPARISON",
+ "schema": "h2025_p5c_same_protocol_comparison_result/v1",
+ "secondary_descriptive": {
+  "delta_macro_rank1": 0.02556160021980332,
+  "delta_mrr": 0.021826281391430058,
+  "note": "secondary/descriptive only; not part of any primary gate"
+ },
+ "stage": "P5-C"
+}

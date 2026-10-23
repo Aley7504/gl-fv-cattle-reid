@@ -21,8 +21,8 @@ the two public datasets (see **Data** below).
 | `code/` | The evaluation pipeline exactly as frozen for the paper: global training, Hessian-affine/HardNet description, Fisher-Vector encoding, scoring, H2 evaluation, bootstrap inference, and the six scripts used for the post-hoc audits (absolute metrics, ablations, absolute CIs, farm detector diagnosis, the farm strata reconciliation, and the farm region-of-interest rule comparison). |
 | `configs/` | Frozen Fisher-Vector codebook (PCA-32 / GMM-16, `whiten=False`, 1024-D) and its provenance metadata. |
 | `splits/` | The custom 56/8/16 identity partition of the filtered Holstein2025 subset, and the ten frozen gallery realizations. |
-| `models/` | Three frozen MobileNetV2-ArcFace global checkpoints (seeds 42/43/44, 128-D, 112x112) with their configs. |
-| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, the H2025 cross-split duplicate audit with its visual review sheet, the farm evaluation of the **deployed** configuration, the same evaluation under the detector configuration kept for diagnosis, the detector failure-mode diagnosis, the farm strata reconciliation and the farm region-of-interest rule comparison). |
+| `models/` | Three frozen MobileNetV2-ArcFace global checkpoints (seeds 42/43/44, 128-D, 112x112) with their configs, and the EfficientNetV2-S arm (training records, per-epoch history and the holdout embeddings for seeds 42/43/44; the 82 MB weights are regenerable with `code/stage_e_train_global_effnetv2.py`). |
+| `results/` | Machine-readable outputs behind the tables and figures (absolute metrics, ablations, bootstrap CIs, the H2025 cross-split duplicate audit with its visual review sheet, the farm evaluation of the **deployed** configuration, the same evaluation under the detector configuration kept for diagnosis, the detector failure-mode diagnosis, the farm strata reconciliation, the farm region-of-interest rule comparison, the measured pipeline cost, the PCA/GMM sensitivity, the EfficientNetV2-S backbone arm, the SIFT + Fisher Vector baseline, the comparator results and the consolidated `results_summary.csv`). |
 | `manifests/` | `h2025_clean_manifest.csv` - per-image manifest of the filtered H2025 subset (identity, capture date inferred from the source filename, gallery/query role, SHA-256, source clip) - and `farm_manifest_528.csv` - per-frame manifest for the 528 farm frames (identity, session, gallery/query role, frame index, ROI flags). |
 | `third_party/` | Vendored HesAffNet/HardNet++ PyTorch code (see provenance note inside). Not written by the authors. |
 | `artifacts/` | `farm_frames_528.zip` — the 528 farm frames plus the manifest. **Not tracked by git**; archived on Zenodo as three part archives, see **Data** below. |
@@ -116,3 +116,12 @@ directly from `results/`.
 
 See `CITATION.cff`. If you use the farm frames, please also cite the dataset record (DOI assigned on
 publication).
+
+## Changes in v1.0.6
+
+* **Measured cost of the deployed pipeline** (`results/stage_c_efficiency/`): one timing program on one machine, 20 timed repeats after warm-up, cold start reported separately, and a re-computation check that reproduces the frozen Fisher vectors bit-for-bit (max absolute difference 0.0).
+* **PCA/GMM sensitivity** (`results/stage_d_summary.json`): four codebook configurations fitted on the training pool only, evaluated with the frozen global branch, gallery realizations and statistics; the first configuration reproduces the published contrast exactly, which validates the chain.
+* **EfficientNetV2-S backbone arm** (`results/stage_e_effnetv2_h2025.json`): a third global branch trained under the same protocol, with the BatchNorm statistic-group deviation recorded in the run configuration.
+* **SIFT + Fisher Vector baseline** (`results/stage_f_sift_h2025.json`): a traditional local descriptor under the identical descriptor budget, codebook configuration and evaluation chain.
+* **Comparator reproducibility** (`code/p5_comparator/`, `results/P5C_*`): the scripts and per-query outcomes behind the same-protocol comparison table.
+* **Runnability**: the vendored local-feature code is now located in `third_party/local_fv`; the Hessian-affine weights are not redistributed (upstream licence) and `code/LOCAL_WEIGHTS.md` gives their provenance and expected hashes; the two scripts with a hard-coded project root now read `H2025_ROOT` from the environment; `timm` was added to the requirements.

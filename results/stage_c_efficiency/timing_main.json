@@ -1,0 +1,416 @@
+{
+ "env": {
+  "timestamp": "2026-10-23T10:01:44",
+  "platform": "Windows-10-10.0.19041-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "python": "3.9.25",
+  "torch": "2.7.1+cu118",
+  "opencv": "4.13.0",
+  "numpy": "2.0.1",
+  "torch_threads": 6,
+  "torch_interop_threads": 6,
+  "cuda_available": true,
+  "gpu": {
+   "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+   "total_mem_bytes": 4294443008,
+   "multi_processor_count": 16,
+   "capability": "8.6"
+  },
+  "project_env": {
+   "role": "TARGET env (h2025_clean, Clean Restart)",
+   "python": "3.9.25 (main, Nov  3 2025, 22:44:01) [MSC v.1929 64 bit (AMD64)]",
+   "python_version": "3.9.25",
+   "executable": "D:\\conda_envs\\h2025_clean\\Scripts\\python.exe",
+   "platform": "Windows-10-10.0.19041-SP0",
+   "import_failures": [],
+   "torch": "2.7.1+cu118",
+   "torch_cuda": "11.8",
+   "cudnn": 90100,
+   "cuda_available": true,
+   "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+   "gpu_total_mem_bytes": 4294443008,
+   "capability": [
+    8,
+    6
+   ],
+   "tf32_matmul_default": false,
+   "tf32_cudnn_default": true,
+   "n_threads": 6,
+   "numpy": "2.0.1",
+   "opencv": "4.13.0",
+   "pillow": "11.3.0",
+   "libiomp5md_count": 1,
+   "libiomp5md_paths": [
+    "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll"
+   ],
+   "mkl_dll_count": 0,
+   "runtime_omp_mkl_modules": [
+    "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll"
+   ],
+   "runtime_omp_mkl_inside_venv": [
+    "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll"
+   ],
+   "runtime_omp_mkl_outside_venv": [],
+   "threadpoolctl": "3.6.0",
+   "threadpools": [
+    {
+     "user_api": "openmp",
+     "internal_api": "openmp",
+     "prefix": "libiomp",
+     "version": null,
+     "num_threads": 6,
+     "filepath": "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll"
+    },
+    {
+     "user_api": "openmp",
+     "internal_api": "openmp",
+     "prefix": "libiomp",
+     "version": null,
+     "num_threads": 1,
+     "filepath": "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\torch\\lib\\libiompstubs5md.dll"
+    },
+    {
+     "user_api": "blas",
+     "internal_api": "openblas",
+     "prefix": "libscipy_openblas",
+     "version": "0.3.27",
+     "num_threads": 12,
+     "filepath": "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-fb1711452d4d8cee9f276fd1449ee5c7.dll"
+    },
+    {
+     "user_api": "openmp",
+     "internal_api": "openmp",
+     "prefix": "vcomp",
+     "version": null,
+     "num_threads": 12,
+     "filepath": "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll"
+    },
+    {
+     "user_api": "blas",
+     "internal_api": "openblas",
+     "prefix": "libopenblas",
+     "version": "0.3.27",
+     "num_threads": 12,
+     "filepath": "D:\\conda_envs\\h2025_clean\\Lib\\site-packages\\scipy.libs\\libopenblas_v0.3.27--3aa239bc726cfb0bd8e5330d8d4c15c6.dll"
+    }
+   ]
+  }
+ },
+ "verification": {
+  "fv_recompute_check": {
+   "n_images": 3,
+   "max_abs_diff_vs_frozen": 0.0,
+   "pass": true
+  }
+ },
+ "measurements": {
+  "C-1a_global_forward_cpu": {
+   "n": 20,
+   "mean_s": 0.008750280000000065,
+   "std_s": 0.0010714780586206347,
+   "median_s": 0.008643900000000038,
+   "min_s": 0.006938599999999795,
+   "max_s": 0.010867100000000463,
+   "p95_s": 0.010663000000000089,
+   "raw_s": [
+    0.00785,
+    0.007528,
+    0.007903,
+    0.007148,
+    0.008193,
+    0.00859,
+    0.008598,
+    0.008415,
+    0.009094,
+    0.008733,
+    0.009985,
+    0.008689,
+    0.010867,
+    0.009724,
+    0.009862,
+    0.010663,
+    0.009229,
+    0.008765,
+    0.006939,
+    0.00823
+   ]
+  },
+  "C-1b_global_forward_gpu": {
+   "n": 20,
+   "mean_s": 0.0058231999999998505,
+   "std_s": 0.0007741660239455952,
+   "median_s": 0.00573789999999974,
+   "min_s": 0.004709700000001149,
+   "max_s": 0.007277800000000667,
+   "p95_s": 0.006990800000000519,
+   "raw_s": [
+    0.005642,
+    0.005472,
+    0.005719,
+    0.004802,
+    0.00544,
+    0.007278,
+    0.00471,
+    0.004725,
+    0.006707,
+    0.004771,
+    0.005757,
+    0.006991,
+    0.005855,
+    0.006975,
+    0.00601,
+    0.005438,
+    0.006256,
+    0.005463,
+    0.006396,
+    0.006058
+   ]
+  },
+  "C-2a_local_describe_cpu": {
+   "n": 6,
+   "mean_s": 0.6210674666666668,
+   "std_s": 0.019406785578314222,
+   "median_s": 0.6097073000000002,
+   "min_s": 0.6070849000000003,
+   "max_s": 0.6473481999999997,
+   "p95_s": 0.6447590000000005,
+   "raw_s": [
+    0.607798,
+    0.607085,
+    0.644759,
+    0.647348,
+    0.610561,
+    0.608854
+   ]
+  },
+  "C-2b_local_describe_gpu": {
+   "n": 6,
+   "mean_s": 0.4305555666666668,
+   "std_s": 0.010840083562163205,
+   "median_s": 0.42831820000000054,
+   "min_s": 0.4195303999999993,
+   "max_s": 0.4505357000000014,
+   "p95_s": 0.4327615999999992,
+   "raw_s": [
+    0.430215,
+    0.423869,
+    0.450536,
+    0.432762,
+    0.426422,
+    0.41953
+   ]
+  },
+  "C-3a_fv_encode": {
+   "n": 20,
+   "mean_s": 0.00021377500000010485,
+   "std_s": 4.670047334264832e-06,
+   "median_s": 0.0002127000000005097,
+   "min_s": 0.0002098000000003708,
+   "max_s": 0.00023029999999835127,
+   "p95_s": 0.00022039999999989845,
+   "raw_s": [
+    0.00022,
+    0.000215,
+    0.00023,
+    0.000215,
+    0.000215,
+    0.000214,
+    0.000215,
+    0.000211,
+    0.000212,
+    0.000213,
+    0.00021,
+    0.000215,
+    0.00021,
+    0.000212,
+    0.000211,
+    0.000211,
+    0.000215,
+    0.000211,
+    0.000211,
+    0.000211
+   ]
+  },
+  "C-3b_identity_match": {
+   "n": 20,
+   "mean_s": 0.00017611500000001002,
+   "std_s": 1.7780163402890847e-06,
+   "median_s": 0.00017570000000155517,
+   "min_s": 0.0001737999999988915,
+   "max_s": 0.00018070000000136588,
+   "p95_s": 0.00017980000000150653,
+   "raw_s": [
+    0.00018,
+    0.000175,
+    0.000175,
+    0.000181,
+    0.000176,
+    0.000176,
+    0.000176,
+    0.000174,
+    0.000176,
+    0.000175,
+    0.000175,
+    0.000177,
+    0.000174,
+    0.000174,
+    0.000177,
+    0.000175,
+    0.000177,
+    0.000176,
+    0.000175,
+    0.000178
+   ]
+  },
+  "C-4a_full_pipeline_gpu": {
+   "n": 8,
+   "mean_s": 0.4297881250000004,
+   "std_s": 0.0049548564755777765,
+   "median_s": 0.4288945000000002,
+   "min_s": 0.42319240000000136,
+   "max_s": 0.4397397000000005,
+   "p95_s": 0.43344230000000294,
+   "raw_s": [
+    0.427293,
+    0.427153,
+    0.43974,
+    0.429666,
+    0.429695,
+    0.433442,
+    0.428123,
+    0.423192
+   ]
+  },
+  "C-4b_decode_only": {
+   "n": 20,
+   "mean_s": 0.0002618750000001668,
+   "std_s": 4.245973325111017e-06,
+   "median_s": 0.00026100000000006673,
+   "min_s": 0.00025679999999894676,
+   "max_s": 0.0002711000000026331,
+   "p95_s": 0.00026989999999926795,
+   "raw_s": [
+    0.000271,
+    0.00027,
+    0.000268,
+    0.000266,
+    0.000264,
+    0.000262,
+    0.00026,
+    0.000264,
+    0.00026,
+    0.000262,
+    0.000259,
+    0.000264,
+    0.000258,
+    0.000259,
+    0.00026,
+    0.000262,
+    0.000257,
+    0.000257,
+    0.000257,
+    0.000258
+   ]
+  },
+  "C-4d_full_pipeline_cpu": {
+   "n": 4,
+   "mean_s": 0.6076724999999996,
+   "std_s": 0.03354548712191504,
+   "median_s": 0.5951004500000003,
+   "min_s": 0.5838648000000006,
+   "max_s": 0.6566242999999972,
+   "p95_s": 0.6020539000000014,
+   "raw_s": [
+    0.602054,
+    0.583865,
+    0.588147,
+    0.656624
+   ]
+  },
+  "C-4c_farm_window_pipeline_gpu": {
+   "n": 8,
+   "mean_s": 0.41721282499999823,
+   "std_s": 0.014336036062486466,
+   "median_s": 0.4116636999999983,
+   "min_s": 0.4027974000000043,
+   "max_s": 0.4362389999999934,
+   "p95_s": 0.43313589999999635,
+   "raw_s": [
+    0.43261,
+    0.436239,
+    0.433136,
+    0.410646,
+    0.402797,
+    0.406565,
+    0.412682,
+    0.403028
+   ]
+  }
+ },
+ "recorded_costs": {
+  "training": {
+   "mobilenetv2_s42": {
+    "error": "AttributeError(\"'list' object has no attribute 'get'\")"
+   },
+   "mobilenetv2_s43": {
+    "error": "AttributeError(\"'list' object has no attribute 'get'\")"
+   },
+   "mobilenetv2_s44": {
+    "error": "AttributeError(\"'list' object has no attribute 'get'\")"
+   }
+  },
+  "one_off_build": {
+   "descriptor_extract_top64_train_pool": {
+    "elapsed_sec": 7720.4,
+    "n_images": 2454,
+    "n_descriptors": null,
+    "fit_images": null,
+    "fit_descriptors": null,
+    "pca": null,
+    "clusters": null,
+    "_source": "features/local/train_pool_meta.json"
+   },
+   "descriptor_extract_pool256_train_pool": {
+    "elapsed_sec": 1800.4,
+    "n_images": 2454,
+    "n_descriptors": null,
+    "fit_images": null,
+    "fit_descriptors": null,
+    "pca": null,
+    "clusters": null,
+    "_source": "features/local/n256/train_pool_meta.json"
+   },
+   "codebook_fit_pool256_pca32_gmm16": {
+    "elapsed_sec": 11.5,
+    "n_images": null,
+    "n_descriptors": null,
+    "fit_images": 2454,
+    "fit_descriptors": 273218,
+    "pca": null,
+    "clusters": null,
+    "_source": "codebooks/N2_0_pool256_shared_codebook_meta.json"
+   },
+   "codebook_fit_top64_pca32_gmm16": {
+    "elapsed_sec": 3.7,
+    "n_images": null,
+    "n_descriptors": null,
+    "fit_images": 2454,
+    "fit_descriptors": 62464,
+    "pca": null,
+    "clusters": null,
+    "_source": "features/fv/primary_meta.json"
+   },
+   "fv_encode_holdout_gallery": {
+    "elapsed_sec": 0.2,
+    "n_images": 72,
+    "n_descriptors": null,
+    "fit_images": null,
+    "fit_descriptors": null,
+    "pca": null,
+    "clusters": null,
+    "_source": "features/fv/primary_fv_holdout_gallery_meta.json"
+   }
+  },
+  "note": "training and build costs are reported separately and never merged into a speed ratio"
+ }
+}

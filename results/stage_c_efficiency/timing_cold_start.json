@@ -1,0 +1,8 @@
+{
+ "cold_start": {
+  "import_and_model_load_s": 2.4356013000000005,
+  "first_forward_s": 0.014424499999999618,
+  "total_to_first_result_s": 2.4500258,
+  "note": "measured inside a fresh python process; import of project modules included"
+ }
+}

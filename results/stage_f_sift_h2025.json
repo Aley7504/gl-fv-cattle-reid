@@ -1,0 +1,134 @@
+{
+ "protocol": {
+  "descriptor": "SIFT (OpenCV 4.13.0), 128-D, response-ranked Top-64 per image",
+  "budget_parity": "same 64-descriptor cap and same response-ranking rule as the deep branch",
+  "codebook": "PCA-32 / GMM-16 fitted on train_pool SIFT descriptors only (no test leakage)",
+  "global_branch": "frozen MobileNetV2 + ArcFace (unchanged)",
+  "fusion_alpha": 0.5,
+  "identity_score": "max over the identity's gallery images",
+  "bootstrap": "identity-cluster, 16 clusters, B=10000, seed 20260917",
+  "arms": [
+   "SIFT-FV local only",
+   "GL-FVF with SIFT-FV replacing the deep local branch"
+  ]
+ },
+ "metrics": {
+  "rank1_query_weighted": {
+   "H2a_g1": {
+    "point_estimate": 0.024915824915824912,
+    "ci95": [
+     0.0005708933507929565,
+     0.058547979797979786
+    ],
+    "decision": {
+     "rule": "estimate > 0 AND bootstrap 95% CI lower bound > 0",
+     "estimate": 0.024915824915824912,
+     "ci95_lower": 0.0005708933507929565,
+     "supported": true,
+     "p_value_reported": false,
+     "note": "p 值不是本轮判据；Holm / Wilcoxon 均已退出推断（见勘误 T25–T34）。"
+    }
+   },
+   "per_regime": {
+    "g1": {
+     "delta": 0.024915824915824912,
+     "n_repeats": 30,
+     "n_positive": 23,
+     "n_negative": 6
+    },
+    "g3": {
+     "delta": 0.05218855218855221,
+     "n_repeats": 30,
+     "n_positive": 26,
+     "n_negative": 1
+    },
+    "full": {
+     "delta": 0.06734006734006732,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    }
+   }
+  },
+  "macro_rank1_identity_balanced": {
+   "H2a_g1": {
+    "point_estimate": 0.031872519841269834,
+    "ci95": [
+     -0.0006349206349206282,
+     0.07276085069444443
+    ],
+    "decision": {
+     "rule": "estimate > 0 AND bootstrap 95% CI lower bound > 0",
+     "estimate": 0.031872519841269834,
+     "ci95_lower": -0.0006349206349206282,
+     "supported": false,
+     "p_value_reported": false,
+     "note": "p 值不是本轮判据；Holm / Wilcoxon 均已退出推断（见勘误 T25–T34）。"
+    }
+   },
+   "per_regime": {
+    "g1": {
+     "delta": 0.031872519841269834,
+     "n_repeats": 30,
+     "n_positive": 24,
+     "n_negative": 6
+    },
+    "g3": {
+     "delta": 0.06484375,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    },
+    "full": {
+     "delta": 0.08390376984126985,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    }
+   }
+  },
+  "identity_level_map_mrr": {
+   "H2a_g1": {
+    "point_estimate": 0.020538230942271352,
+    "ci95": [
+     0.002629258203216541,
+     0.04474377230252906
+    ],
+    "decision": {
+     "rule": "estimate > 0 AND bootstrap 95% CI lower bound > 0",
+     "estimate": 0.020538230942271352,
+     "ci95_lower": 0.002629258203216541,
+     "supported": true,
+     "p_value_reported": false,
+     "note": "p 值不是本轮判据；Holm / Wilcoxon 均已退出推断（见勘误 T25–T34）。"
+    }
+   },
+   "per_regime": {
+    "g1": {
+     "delta": 0.020538230942271352,
+     "n_repeats": 30,
+     "n_positive": 28,
+     "n_negative": 2
+    },
+    "g3": {
+     "delta": 0.03884328073722015,
+     "n_repeats": 30,
+     "n_positive": 29,
+     "n_negative": 1
+    },
+    "full": {
+     "delta": 0.05057307077509107,
+     "n_repeats": 30,
+     "n_positive": 30,
+     "n_negative": 0
+    }
+   }
+  }
+ },
+ "sift_fv_local_only_rank1": {
+  "mean": 0.1912457912457912,
+  "n_conditions": 90,
+  "min": 0.13131313131313133,
+  "max": 0.23232323232323232
+ }
+}

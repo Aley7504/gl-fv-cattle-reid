@@ -1,0 +1,11 @@
+experiment_id,measurement,mean_s,std_s,median_s,n,source_artifact
+stage_c_efficiency,C-1a_global_forward_cpu,0.008750,0.001071,0.008644,20,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-1b_global_forward_gpu,0.005823,0.000774,0.005738,20,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-2a_local_describe_cpu,0.621067,0.019407,0.609707,6,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-2b_local_describe_gpu,0.430556,0.010840,0.428318,6,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-3a_fv_encode,0.000214,0.000005,0.000213,20,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-3b_identity_match,0.000176,0.000002,0.000176,20,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-4a_full_pipeline_gpu,0.429788,0.004955,0.428895,8,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-4b_decode_only,0.000262,0.000004,0.000261,20,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-4d_full_pipeline_cpu,0.607672,0.033545,0.595100,4,results_raw/stage_c_efficiency/timing_main.json
+stage_c_efficiency,C-4c_farm_window_pipeline_gpu,0.417213,0.014336,0.411664,8,results_raw/stage_c_efficiency/timing_main.json

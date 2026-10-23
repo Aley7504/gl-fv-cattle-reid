@@ -9,3 +9,4 @@ opencv-python>=4.8
 pillow>=10.0
 matplotlib>=3.7
 threadpoolctl>=3.1
+timm==1.0.30   # required by the ConvNeXt-Tiny + DINOv3 arm

@@ -1,0 +1,371 @@
+{
+ "protocol": {
+  "fit_subset": "train_pool (56 identities), Top-64 descriptors only",
+  "leakage_guard": "inner_val / holdout never used for codebook fitting",
+  "test_identities": "frozen holdout (16 identities)",
+  "gallery_realizations": "frozen seeds 101-110",
+  "train_seeds": [
+   42,
+   43,
+   44
+  ],
+  "fusion_alpha": 0.5,
+  "identity_score": "max over the identity's gallery images",
+  "bootstrap": "identity-cluster, 16 clusters, B=10000, seed 20260917, percentile 2.5/97.5",
+  "statistics_code": "h2_statistical_inference.h2_endpoints (frozen, imported)"
+ },
+ "configs": {
+  "frozen_primary_pca32_gmm16": {
+   "pca": 32,
+   "clusters": 16,
+   "fv_dim": 1024,
+   "fit_descriptors": 62464,
+   "codebook_fit_s": 0.001,
+   "explained_variance_ratio_sum": null,
+   "regimes": {
+    "g1": {
+     "rank1_query_weighted": {
+      "delta_pp": 5.8923,
+      "n_repeats": 30,
+      "n_positive": 27,
+      "n_negative": 3,
+      "ci95_pp": [
+       2.327,
+       9.4287
+      ],
+      "h2a_supported": true,
+      "h2b_T_pp": -9.596
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 5.752,
+      "n_repeats": 30,
+      "n_positive": 26,
+      "n_negative": 4,
+      "ci95_pp": [
+       2.0246,
+       9.5626
+      ],
+      "h2a_supported": true,
+      "h2b_T_pp": -10.245
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 4.2072,
+      "n_repeats": 30,
+      "n_positive": 28,
+      "n_negative": 2,
+      "ci95_pp": [
+       0.8524,
+       7.3812
+      ],
+      "h2a_supported": true,
+      "h2b_T_pp": -6.3437
+     }
+    },
+    "g3": {
+     "rank1_query_weighted": {
+      "delta_pp": 13.2997,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 13.8614,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 9.6447,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    },
+    "full": {
+     "rank1_query_weighted": {
+      "delta_pp": 15.4882,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 15.997,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 10.551,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    }
+   }
+  },
+  "pca16_gmm8": {
+   "pca": 16,
+   "clusters": 8,
+   "fv_dim": 256,
+   "fit_descriptors": 62464,
+   "codebook_fit_s": 2.991,
+   "explained_variance_ratio_sum": 0.42424457160456286,
+   "regimes": {
+    "g1": {
+     "rank1_query_weighted": {
+      "delta_pp": 3.2323,
+      "n_repeats": 30,
+      "n_positive": 21,
+      "n_negative": 9,
+      "ci95_pp": [
+       -1.3214,
+       8.7913
+      ],
+      "h2a_supported": false,
+      "h2b_T_pp": -8.5522
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 3.7341,
+      "n_repeats": 30,
+      "n_positive": 22,
+      "n_negative": 8,
+      "ci95_pp": [
+       -2.1032,
+       9.9793
+      ],
+      "h2a_supported": false,
+      "h2b_T_pp": -9.5794
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 1.907,
+      "n_repeats": 30,
+      "n_positive": 18,
+      "n_negative": 12,
+      "ci95_pp": [
+       -1.5038,
+       5.7619
+      ],
+      "h2a_supported": false,
+      "h2b_T_pp": -6.0455
+     }
+    },
+    "g3": {
+     "rank1_query_weighted": {
+      "delta_pp": 10.2357,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 10.3544,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 7.2381,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    },
+    "full": {
+     "rank1_query_weighted": {
+      "delta_pp": 11.7845,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 13.3135,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 7.9525,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    }
+   }
+  },
+  "pca64_gmm32": {
+   "pca": 64,
+   "clusters": 32,
+   "fv_dim": 4096,
+   "fit_descriptors": 62464,
+   "codebook_fit_s": 5.524,
+   "explained_variance_ratio_sum": 0.8303602201110205,
+   "regimes": {
+    "g1": {
+     "rank1_query_weighted": {
+      "delta_pp": 4.5791,
+      "n_repeats": 30,
+      "n_positive": 27,
+      "n_negative": 2,
+      "ci95_pp": [
+       1.8473,
+       7.8389
+      ],
+      "h2a_supported": true,
+      "h2b_T_pp": -7.2054
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 5.3924,
+      "n_repeats": 30,
+      "n_positive": 27,
+      "n_negative": 3,
+      "ci95_pp": [
+       2.1491,
+       9.1634
+      ],
+      "h2a_supported": true,
+      "h2b_T_pp": -7.4871
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 3.3194,
+      "n_repeats": 30,
+      "n_positive": 29,
+      "n_negative": 1,
+      "ci95_pp": [
+       1.122,
+       5.7586
+      ],
+      "h2a_supported": true,
+      "h2b_T_pp": -5.0745
+     }
+    },
+    "g3": {
+     "rank1_query_weighted": {
+      "delta_pp": 9.6296,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 10.682,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 7.332,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    },
+    "full": {
+     "rank1_query_weighted": {
+      "delta_pp": 11.7845,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 12.8795,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 8.394,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    }
+   }
+  },
+  "pca64_gmm8_capacity_matched": {
+   "pca": 64,
+   "clusters": 8,
+   "fv_dim": 1024,
+   "fit_descriptors": 62464,
+   "codebook_fit_s": 2.56,
+   "explained_variance_ratio_sum": 0.8303602201110205,
+   "regimes": {
+    "g1": {
+     "rank1_query_weighted": {
+      "delta_pp": 1.8855,
+      "n_repeats": 30,
+      "n_positive": 18,
+      "n_negative": 10,
+      "ci95_pp": [
+       -1.0549,
+       5.5145
+      ],
+      "h2a_supported": false,
+      "h2b_T_pp": -7.5421
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 2.964,
+      "n_repeats": 30,
+      "n_positive": 22,
+      "n_negative": 7,
+      "ci95_pp": [
+       -0.9978,
+       7.467
+      ],
+      "h2a_supported": false,
+      "h2b_T_pp": -7.5097
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 1.5649,
+      "n_repeats": 30,
+      "n_positive": 20,
+      "n_negative": 10,
+      "ci95_pp": [
+       -0.8342,
+       4.3039
+      ],
+      "h2a_supported": false,
+      "h2b_T_pp": -5.1602
+     }
+    },
+    "g3": {
+     "rank1_query_weighted": {
+      "delta_pp": 7.6768,
+      "n_repeats": 30,
+      "n_positive": 29,
+      "n_negative": 1
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 8.5843,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 6.0206,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    },
+    "full": {
+     "rank1_query_weighted": {
+      "delta_pp": 9.4276,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "macro_rank1_identity_balanced": {
+      "delta_pp": 10.4737,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     },
+     "identity_level_map_mrr": {
+      "delta_pp": 6.7252,
+      "n_repeats": 30,
+      "n_positive": 30,
+      "n_negative": 0
+     }
+    }
+   }
+  }
+ }
+}

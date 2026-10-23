@@ -1,0 +1,82 @@
+{
+ "all_checks_pass": true,
+ "checks": {
+  "all_hu_features_finite": true,
+  "checkpoint_hashes_match_completion_audit": true,
+  "frozen_endpoint_counts_match": true,
+  "hu_feature_dim_128": true,
+  "hu_query_path_set_equals_frozen_endpoint": true,
+  "identity_labels_exact_match": true,
+  "n_checkpoints": 15,
+  "no_missing_or_duplicate_samples": true,
+  "no_post_p5b_model_or_pca_modification": true,
+  "pca_fit_identities_exclude_inner_val_and_outer_eval": true,
+  "published_ours_numbers_reproduced": true
+ },
+ "created_at": "2026-09-30T11:29:09",
+ "metric_definition_provenance": "Rank-1 / MRR / Macro-Rank-1 were recovered by reproducing the published P3-C numbers from the frozen per-query ranks. Macro-Rank-1 = mean over identities of each identity's query-mean Rank-1 hit rate; two alternative candidates (identity 'any' = 0.9844 and identity 'all' = 0.8242 for fusion/s42) did NOT reproduce 0.9355 and were therefore rejected. The definitions were not assumed.",
+ "outer_retrieval_metric_recomputed_for_ours": false,
+ "p3c_evaluator_disclosure": "The P3-C execution seal references scripts/stage_p3c_external_primary_eval.py (sha256 eaec0f32...dd3849), but that source file is NOT present in the recovered tree, so it could not be re-hashed or literally reused. P5-C therefore implements the same protocol in this new, separately-hashed evaluator and validates fidelity by reproducing the published P3-C metrics to 5 decimal places.",
+ "p3c_evaluator_source_available": false,
+ "per_fold_alignment": {
+  "fold0": {
+   "counts_match": true,
+   "frozen_gallery": 156,
+   "frozen_ids": 52,
+   "frozen_query": 243,
+   "frozen_query_identity_set_equals_hu_query_identity_set": true,
+   "frozen_query_rel_set_equals_hu_query_rel_set": true,
+   "hu_gallery": 156,
+   "hu_ids": 52,
+   "hu_query": 243
+  },
+  "fold1": {
+   "counts_match": true,
+   "frozen_gallery": 153,
+   "frozen_ids": 51,
+   "frozen_query": 220,
+   "frozen_query_identity_set_equals_hu_query_identity_set": true,
+   "frozen_query_rel_set_equals_hu_query_rel_set": true,
+   "hu_gallery": 153,
+   "hu_ids": 51,
+   "hu_query": 220
+  },
+  "fold2": {
+   "counts_match": true,
+   "frozen_gallery": 153,
+   "frozen_ids": 51,
+   "frozen_query": 217,
+   "frozen_query_identity_set_equals_hu_query_identity_set": true,
+   "frozen_query_rel_set_equals_hu_query_rel_set": true,
+   "hu_gallery": 153,
+   "hu_ids": 51,
+   "hu_query": 217
+  },
+  "fold3": {
+   "counts_match": true,
+   "frozen_gallery": 153,
+   "frozen_ids": 51,
+   "frozen_query": 214,
+   "frozen_query_identity_set_equals_hu_query_identity_set": true,
+   "frozen_query_rel_set_equals_hu_query_rel_set": true,
+   "hu_gallery": 153,
+   "hu_ids": 51,
+   "hu_query": 214
+  },
+  "fold4": {
+   "counts_match": true,
+   "frozen_gallery": 153,
+   "frozen_ids": 51,
+   "frozen_query": 210,
+   "frozen_query_identity_set_equals_hu_query_identity_set": true,
+   "frozen_query_rel_set_equals_hu_query_rel_set": true,
+   "hu_gallery": 153,
+   "hu_ids": 51,
+   "hu_query": 210
+  }
+ },
+ "ruling": "P5-C FORMAL SAME-PROTOCOL COMPARISON §7 (evaluation audit)",
+ "schema": "h2025_p5c_evaluation_audit/v1",
+ "stage": "P5-C",
+ "verdict": "PASS"
+}

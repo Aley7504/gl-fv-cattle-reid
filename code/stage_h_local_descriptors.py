@@ -37,7 +37,9 @@ import torch
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import h2025_common as C
 
-VENDOR = C.ROOT / "code" / "local_fv" / "hesaff_pytorch"
+VENDOR = (C.ROOT / "code" / "local_fv" / "hesaff_pytorch")
+if not VENDOR.is_dir():
+    VENDOR = C.ROOT / "third_party" / "local_fv" / "hesaff_pytorch"
 sys.path.insert(0, str(VENDOR))
 
 WEIGHT_DIR = Path(r"D:\复现论文\reproduction\models")

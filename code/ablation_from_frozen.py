@@ -7,11 +7,11 @@ Q3 Alpha sensitivity   : fusion score = a*sG + (1-a)*sL, a in [0,1] step 0.05
 Q4 Backbone dependence : ConvNeXt-Tiny arms (A_p_seed, C_p_seed) at g1
 Q5 Coverage stability  : g1 / g3 / full, spread across the 10 gallery realizations
 """
-import importlib.util, sys, json
+import os, importlib.util, sys, json
 from pathlib import Path
 import numpy as np
 
-ROOT = Path(r'D:\H2025_clean_restart')
+ROOT = Path(os.environ.get('H2025_ROOT', r'D:\H2025_clean_restart'))
 sys.path.insert(0, str(ROOT / 'scripts'))
 spec = importlib.util.spec_from_file_location("h2025_stage_j_scores", ROOT / 'scripts' / 'stage_j_scores.py')
 SJ = importlib.util.module_from_spec(spec); sys.modules['h2025_stage_j_scores'] = SJ

@@ -1,0 +1,99 @@
+{
+  "run_id": "efficientnet_v2_s_s44_img224_emb128_mb16x4",
+  "backbone": "efficientnet_v2_s",
+  "seed": 44,
+  "epochs": 20,
+  "batch": 16,
+  "imgsz": 224,
+  "micro_batch": 16,
+  "gradient_accumulation_steps": 4,
+  "effective_batch": 64,
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "embedding": 128,
+  "arc_margin": 0.5,
+  "arc_scale": 30.0,
+  "optimizer": "AdamW",
+  "scheduler": "none",
+  "augmentation": "HFlip + ColorJitter(brightness .5-1.5) + RandomErasing(p=.5,area .02-.25)",
+  "normalize": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "loss": "ArcFace(cosface-style additive angular margin)",
+  "checkpoint_selection": "inner-validation mAP (身份留出; 不使用 legacy dev / official test)",
+  "n_classes": 56,
+  "n_train_images": 2454,
+  "split_sha256": "3dcf598abe24442499cb7a232081178fd167bd958a9e804a2c5e113107ce9225",
+  "precision": {
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "cudnn_benchmark": false,
+    "float32_matmul_precision": "highest"
+  },
+  "device": "cuda",
+  "torch": "2.7.1+cu118",
+  "cuda": "11.8",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "backbone_structure_check": {
+    "checked": true,
+    "n_keys": 780,
+    "match": true,
+    "emb_dim": 128,
+    "classifier_replaced": true
+  },
+  "batchnorm_check": {
+    "has_batchnorm": true,
+    "layers": [
+      "trunk.0.1 (BatchNorm2d)",
+      "trunk.1.0.block.0.1 (BatchNorm2d)",
+      "trunk.1.1.block.0.1 (BatchNorm2d)",
+      "trunk.2.0.block.0.1 (BatchNorm2d)",
+      "trunk.2.0.block.1.1 (BatchNorm2d)",
+      "trunk.2.1.block.0.1 (BatchNorm2d)",
+      "trunk.2.1.block.1.1 (BatchNorm2d)",
+      "trunk.2.2.block.0.1 (BatchNorm2d)",
+      "trunk.2.2.block.1.1 (BatchNorm2d)",
+      "trunk.2.3.block.0.1 (BatchNorm2d)",
+      "trunk.2.3.block.1.1 (BatchNorm2d)",
+      "trunk.3.0.block.0.1 (BatchNorm2d)",
+      "trunk.3.0.block.1.1 (BatchNorm2d)",
+      "trunk.3.1.block.0.1 (BatchNorm2d)",
+      "trunk.3.1.block.1.1 (BatchNorm2d)",
+      "trunk.3.2.block.0.1 (BatchNorm2d)",
+      "trunk.3.2.block.1.1 (BatchNorm2d)",
+      "trunk.3.3.block.0.1 (BatchNorm2d)",
+      "trunk.3.3.block.1.1 (BatchNorm2d)",
+      "trunk.4.0.block.0.1 (BatchNorm2d)"
+    ],
+    "enforced": false
+  },
+  "stage_e_deviation": {
+    "type": "batchnorm_running_statistics_group_size",
+    "micro_batch": 16,
+    "effective_batch": 64,
+    "statement": "BatchNorm running statistics are updated per micro-batch (16) rather than per effective batch (64); the training is therefore NOT equivalent to the effective-batch-64 protocol used for the MobileNetV2 baseline.",
+    "reason": "4.29 GB VRAM cannot hold EfficientNetV2-S at 224 px with batch 64"
+  },
+  "stage_e_script": {
+    "based_on": "D:/H2025_clean_restart/scripts/stage_g_train_global.py",
+    "original_sha256": "7573791d9b5bbbcf",
+    "changes": [
+      "added backbone branch efficientnet_v2_s (torchvision IMAGENET1K_V1)",
+      "added --out-root",
+      "added --allow-batchnorm-accum (recorded deviation)"
+    ]
+  },
+  "accumulation_semantics": "hardware-adapted effective-batch-64 training without BatchNorm running-statistics dependence",
+  "accumulation_equivalence_caveat": "float accumulation order and non-deterministic kernels may still make this NOT bitwise identical to a single batch-64 forward/backward",
+  "code_sha256": "bc721e447e3b6b57cd376486079ffb25f0c42103af7cfdf01c121fe56b0d7c0b",
+  "created_at": "2026-10-23T10:44:11"
+}

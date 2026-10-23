@@ -1,0 +1,178 @@
+{
+ "schema": "h2025_p4c_modern_global_result/v1",
+ "stage": "P4-C",
+ "created_at": "2026-10-23T20:40:20",
+ "p4b_input_seal_content_sha256": "c205cf10a3ee6455e7cbb15f89888c414bf6029cb190541f8f27e0b0c3c79f26",
+ "execution_seal_content_sha256": "e3cb028d681255974f0600a59ac103ca77d5c5557b93ca3b0223987d83ae51d7",
+ "evaluator_sha256": "ac2afba9809b3b8427564e0ceeb390f469c5d893fca3adf79bfe29767fcdca3a",
+ "design": {
+  "alpha": 0.5,
+  "tie_rule": "optimistic",
+  "aggregation": "max",
+  "retrieval_scope": "fold-local; pooled only after outcomes are frozen",
+  "seeds": [
+   42,
+   43,
+   44
+  ],
+  "bootstrap": {
+   "unit": "identity cluster",
+   "draws": 10000,
+   "seed": 20260922
+  }
+ },
+ "endpoint": {
+  "identities": 256,
+  "gallery": 768,
+  "query": 1104,
+  "images": 1872,
+  "fold_counts": {
+   "0": [
+    52,
+    156,
+    243
+   ],
+   "1": [
+    51,
+    153,
+    220
+   ],
+   "2": [
+    51,
+    153,
+    217
+   ],
+   "3": [
+    51,
+    153,
+    214
+   ],
+   "4": [
+    51,
+    153,
+    210
+   ]
+  }
+ },
+ "metrics": {
+  "dino": {
+   "42": {
+    "rank1": 0.9719202898550725,
+    "macro_rank1": 0.9791519678238427,
+    "mrr": 0.9829059879331619
+   },
+   "43": {
+    "rank1": 0.9737318840579711,
+    "macro_rank1": 0.9766641995157621,
+    "mrr": 0.9844375431331952
+   },
+   "44": {
+    "rank1": 0.970108695652174,
+    "macro_rank1": 0.9690069912726164,
+    "mrr": 0.9797995744191396
+   }
+  },
+  "fusion": {
+   "42": {
+    "rank1": 0.9746376811594203,
+    "macro_rank1": 0.9788453300172051,
+    "mrr": 0.9851183287324591
+   },
+   "43": {
+    "rank1": 0.9782608695652174,
+    "macro_rank1": 0.97997690243784,
+    "mrr": 0.9873150664251208
+   },
+   "44": {
+    "rank1": 0.9710144927536232,
+    "macro_rank1": 0.9670386037573537,
+    "mrr": 0.9807605718636937
+   }
+  },
+  "mobilenet_p3c_sealed": {
+   "42": {
+    "rank1": 0.9067028985507246,
+    "macro_rank1": 0.906816051786755,
+    "mrr": 0.9374884617777246
+   },
+   "43": {
+    "rank1": 0.9130434782608695,
+    "macro_rank1": 0.924376112169081,
+    "mrr": 0.9424868775280493
+   },
+   "44": {
+    "rank1": 0.8958333333333334,
+    "macro_rank1": 0.9261896848810912,
+    "mrr": 0.9331561582779011
+   }
+  }
+ },
+ "delta_S_per_seed": {
+  "42": 0.0652173913043479,
+  "43": 0.06068840579710155,
+  "44": 0.07427536231884058
+ },
+ "delta_C_per_seed": {
+  "42": 0.0027173913043477826,
+  "43": 0.004528985507246341,
+  "44": 0.0009057971014492239
+ },
+ "contrast_S": {
+  "name": "Delta_Global = mean_seed[R1_DINOv3 - R1_MobileNet]",
+  "effect": 0.06672705314009668,
+  "ci95": [
+   0.04827305144161967,
+   0.08637826377438979
+  ],
+  "supported": true,
+  "mobilenet_source": "P3-C sealed per-query outcomes (not re-run)"
+ },
+ "contrast_C": {
+  "name": "Delta_Local|Modern = mean_seed[R1_Fusion - R1_DINOv3]",
+  "effect": 0.0027173913043477826,
+  "ci95": [
+   -0.0035431227136614803,
+   0.009179744851170681
+  ],
+  "supported": false
+ },
+ "fold_consistency": {
+  "fold0": {
+   "S_mean_delta": 0.06447187928669411,
+   "C_mean_delta": -0.005486968449931425,
+   "S_direction": "+",
+   "C_direction": "-"
+  },
+  "fold1": {
+   "S_mean_delta": 0.07121212121212124,
+   "C_mean_delta": 0.00303030303030305,
+   "S_direction": "+",
+   "C_direction": "+"
+  },
+  "fold2": {
+   "S_mean_delta": 0.05683563748079875,
+   "C_mean_delta": -0.001536098310291852,
+   "S_direction": "+",
+   "C_direction": "-"
+  },
+  "fold3": {
+   "S_mean_delta": 0.06386292834890965,
+   "C_mean_delta": 0.0031152647975078254,
+   "S_direction": "+",
+   "C_direction": "+"
+  },
+  "fold4": {
+   "S_mean_delta": 0.07777777777777779,
+   "C_mean_delta": 0.015873015873015855,
+   "S_direction": "+",
+   "C_direction": "+"
+  }
+ },
+ "case": "B",
+ "interpretation": "Complementarity remained directionally positive but was not statistically supported under the stronger modern Global.",
+ "global_naming": "empirically stronger Global under the frozen CFF protocol",
+ "stability_disclosure": "inner-val training showed material seed-to-seed variability; all three seeds are reported individually and no seed was dropped",
+ "scope_limitation": "under the frozen fine-tuning recipe",
+ "secondary_status": "Macro-Rank-1 / MRR effects are secondary descriptive; not confirmatory",
+ "no_additional_confirmatory_contrast": true
+}

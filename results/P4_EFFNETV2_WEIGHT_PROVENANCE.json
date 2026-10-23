@@ -1,0 +1,13 @@
+{
+ "schema": "h2025_p4_effnetv2_weight_provenance/v1",
+ "model_identifier": "torchvision:efficientnet_v2_s:IMAGENET1K_V1",
+ "architecture": "EfficientNetV2-S (torchvision), 21,458,776 parameters, feature dimension 1280",
+ "pretrained_weight_files": [
+  {
+   "path": "D:\\H2025_clean_restart\\models\\global\\_torch_home\\hub\\checkpoints\\efficientnet_v2_s-dd5fe13b.pth"
+  }
+ ],
+ "pretrained_weight_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+ "pretrained_source": "torchvision IMAGENET1K_V1 (downloaded into the project TORCH_HOME cache)",
+ "note": "the local branch, the region of interest, the nested split, the codebooks and the statistics are the frozen ones; only the global arm differs from the DINOv3 arm"
+}

@@ -1,0 +1,178 @@
+{
+ "protocol": {
+  "inputs": "frozen CFF embeddings (stage_p3b) and frozen per-fold Fisher vectors",
+  "rungs": "exhaustive enumeration of all C(3,k) gallery subsets; no random draw",
+  "fusion": "alpha = 0.5, identity-level max, optimistic tie rule",
+  "bootstrap": "identity cluster, B = 10000, seed = 20260922; pooled over the outer folds (256 clusters) and reported per fold as well"
+ },
+ "rungs": {
+  "k=1": {
+   "global_rank1": 0.80465,
+   "local_rank1": 0.618961,
+   "fusion_rank1": 0.868659,
+   "delta_pp_pooled": 6.401,
+   "delta_ci95_pp_pooled": [
+    4.9322,
+    7.9002
+   ],
+   "delta_pp_fold_mean": 6.4586,
+   "delta_pp_fold_sd": 2.2467,
+   "per_fold": [
+    {
+     "fold": 0,
+     "delta_pp": 4.7554,
+     "ci95_pp": [
+      1.9343,
+      7.3388
+     ]
+    },
+    {
+     "fold": 1,
+     "delta_pp": 7.4242,
+     "ci95_pp": [
+      3.9832,
+      11.1111
+     ]
+    },
+    {
+     "fold": 2,
+     "delta_pp": 3.789,
+     "ci95_pp": [
+      1.2842,
+      6.523
+     ]
+    },
+    {
+     "fold": 3,
+     "delta_pp": 6.8536,
+     "ci95_pp": [
+      3.2921,
+      10.5505
+     ]
+    },
+    {
+     "fold": 4,
+     "delta_pp": 9.4709,
+     "ci95_pp": [
+      5.9789,
+      12.8514
+     ]
+    }
+   ],
+   "n_identity_clusters_pooled": 256,
+   "n_query_pooled": 1104
+  },
+  "k=2": {
+   "global_rank1": 0.874396,
+   "local_rank1": 0.709843,
+   "fusion_rank1": 0.925423,
+   "delta_pp_pooled": 5.1027,
+   "delta_ci95_pp_pooled": [
+    3.7215,
+    6.5613
+   ],
+   "delta_pp_fold_mean": 5.1284,
+   "delta_pp_fold_sd": 1.8221,
+   "per_fold": [
+    {
+     "fold": 0,
+     "delta_pp": 4.7096,
+     "ci95_pp": [
+      1.1529,
+      8.1224
+     ]
+    },
+    {
+     "fold": 1,
+     "delta_pp": 5.303,
+     "ci95_pp": [
+      2.5814,
+      8.1843
+     ]
+    },
+    {
+     "fold": 2,
+     "delta_pp": 2.4066,
+     "ci95_pp": [
+      0.5925,
+      4.4224
+     ]
+    },
+    {
+     "fold": 3,
+     "delta_pp": 5.8152,
+     "ci95_pp": [
+      2.6389,
+      9.6296
+     ]
+    },
+    {
+     "fold": 4,
+     "delta_pp": 7.4074,
+     "ci95_pp": [
+      4.269,
+      10.8238
+     ]
+    }
+   ],
+   "n_identity_clusters_pooled": 256,
+   "n_query_pooled": 1104
+  },
+  "k=3": {
+   "global_rank1": 0.905193,
+   "local_rank1": 0.748188,
+   "fusion_rank1": 0.942633,
+   "delta_pp_pooled": 3.744,
+   "delta_ci95_pp_pooled": [
+    2.3638,
+    5.2553
+   ],
+   "delta_pp_fold_mean": 3.7464,
+   "delta_pp_fold_sd": 1.3013,
+   "per_fold": [
+    {
+     "fold": 0,
+     "delta_pp": 4.1152,
+     "ci95_pp": [
+      -0.0,
+      8.3901
+     ]
+    },
+    {
+     "fold": 1,
+     "delta_pp": 3.3333,
+     "ci95_pp": [
+      0.8091,
+      5.8202
+     ]
+    },
+    {
+     "fold": 2,
+     "delta_pp": 1.6897,
+     "ci95_pp": [
+      0.1667,
+      3.4536
+     ]
+    },
+    {
+     "fold": 3,
+     "delta_pp": 4.6729,
+     "ci95_pp": [
+      1.5789,
+      8.1545
+     ]
+    },
+    {
+     "fold": 4,
+     "delta_pp": 4.9206,
+     "ci95_pp": [
+      2.2109,
+      8.046
+     ]
+    }
+   ],
+   "n_identity_clusters_pooled": 256,
+   "n_query_pooled": 1104
+  }
+ }
+}

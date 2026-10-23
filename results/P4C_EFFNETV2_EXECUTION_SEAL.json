@@ -1,0 +1,111 @@
+{
+ "schema": "h2025_p4c_effnetv2_execution_seal/v1",
+ "stage": "P4-C (EfficientNetV2-S arm)",
+ "sealed_at": "2026-10-23T20:40:19",
+ "purpose": "pin the evaluator and every input hash BEFORE the one-off EfficientNetV2-S outer-eval is opened; nothing here may change afterwards",
+ "p4b_evaluation_input_seal": {
+  "file": "analysis\\stage_p4b_effnetv2\\P4B_EFFNETV2_EVALUATION_INPUT_SEAL.json",
+  "content_sha256": "c205cf10a3ee6455e7cbb15f89888c414bf6029cb190541f8f27e0b0c3c79f26"
+ },
+ "p4c_evaluator": {
+  "file": "scripts\\stage_p4c_effnetv2_eval.py",
+  "sha256": "ac2afba9809b3b8427564e0ceeb390f469c5d893fca3adf79bfe29767fcdca3a",
+  "selftest": {
+   "file": "analysis\\stage_p4c\\P4C_EFFNETV2_SELFTEST.json",
+   "n_tests": 16,
+   "all_pass": true
+  }
+ },
+ "p3c_execution_seal_sha256": "45f2d214602da72b24898cf175e4904b2010e288f466498c7e0026c89b5915fd",
+ "checkpoints": {
+  "fold0_s42": "d7389ddc95f2a82566d81241d2869f27a12676095aaf21f94ef78450d0e8677a",
+  "fold0_s43": "6d4bdde35b7a31b90f1b90e29de74a3b7001c948913a6184a73afac49e3df2f5",
+  "fold0_s44": "45d9d4c20809a85bd7277ad5c48a97bc320eae4ac52d9d3b6115e1852bb15131",
+  "fold1_s42": "bf9df66548c85bc6f5f48be4c626fea6136abd6c25e9b08dbefb69f04ee9dc3a",
+  "fold1_s43": "eb87a4d411ac5aa28f3dc7fdc2c07f1785a2dce5bf487a9d6d3ad37d3b3d4cb1",
+  "fold1_s44": "74b44ea9faecfc5453acf1e5780af84e3d591a1cc193eefe188d953e5f56fb50",
+  "fold2_s42": "941b53e44c506f503f85c397f273bbf3a7b24d509406fe70012c8fe62e1d2816",
+  "fold2_s43": "2dbf1a47e342f98e4f40092c0ef87086a0c4f22a994ea2cbd44f14d1fda1d068",
+  "fold2_s44": "3a80b6caef81d44f34098d97a1ca563e0c6557045c5e22ca039e87044b5dbf64",
+  "fold3_s42": "39f3549c2cddab89fb8e915f6d0341915b1a5f28d58a530ba95a0c071d2c4db4",
+  "fold3_s43": "85f70b4ad30e4070a242eae58f94314c64e4f29bbe078efb18c1bd3605bf29e0",
+  "fold3_s44": "32f3d3e9902d044300d4ccfec2b792097e83c9180eec849016db76961076e1fd",
+  "fold4_s42": "d7ccaacf41c0cdfa5cbb5f6826cb32c190a077cdcfc94c79147287e1def9a07e",
+  "fold4_s43": "20cda7f175b9f3bc4e4c329451127770a2da906fe43593bce2d87bc0e9594e20",
+  "fold4_s44": "1a8c12b51551add2fcaa9fe32620e9936fa48b5bfa0d3c18b59014f62efd195d"
+ },
+ "n_checkpoints": 15,
+ "modern_global_embeddings": {
+  "0_42_inner_val": "c85eb3d10b54c44db021b779e2ff1976ff2cae35985b548ae68c60fb49039004",
+  "0_42_outer_eval": "ac76f098c53b10b2ada761428bf00b71ff341d9a5eab3ea739069099698a44b0",
+  "0_43_inner_val": "160752dbddc3f8589773fbedafe373a0cb4fc264f5d8b8a58105f3eede4a77c1",
+  "0_43_outer_eval": "70abea2d40b1f4234bdc67712a94143217e98f1ab399c3a43a7ba6964798d209",
+  "0_44_inner_val": "e9916d0f6bbd952e7948029c6f6eade9817fbf85150b853abd6c0f9b1bf9c430",
+  "0_44_outer_eval": "18206874b97d6ea6d42924f0e00127c643cebac8fc23938220ad410afe675b7a",
+  "1_42_inner_val": "b50a6ffb6b4a0b6f8712078475aff8c1511347dba9284a3cf241024298bdc26c",
+  "1_42_outer_eval": "c7bea8146642c426f0b1d4c06a05d384d3ce1e204c8e1dfdeae6917a6eda7f25",
+  "1_43_inner_val": "0d90ea4a0bb339eb19a47dd7831aaa93cfbf733c41b1113502c7f6dc697caa85",
+  "1_43_outer_eval": "46fd0e21bf45025b0e6ab680c7ff1dd9a15430be57028e398d26a34000e35221",
+  "1_44_inner_val": "1647fe9093d4e9d46ef904eee06360f2034d63d0acf1f5e84e82c8ff163cccd4",
+  "1_44_outer_eval": "9cef514229eb1e91b53137e6ec6f13b944d9af36b1249a66272d386b6d78c9b8",
+  "2_42_inner_val": "a57db28bc6c334c39c39604b1ea7b5522c94d29cabb8251648987e585eb576f2",
+  "2_42_outer_eval": "b0b00d7dd921cae37a094e6a6dc78bdf28897d656eeec2fda4d481f654cf4b68",
+  "2_43_inner_val": "f0d0a5126b50f8fa0fa0782f59b2d4a9f33ae544a7fee07b6e173f4fb84eafe0",
+  "2_43_outer_eval": "d344bdfd3b41437b3b0fae6d3e3adcc34b5d7a6f0a229f99ff47cbdb257d3a0f",
+  "2_44_inner_val": "eb8a31cfea0b388f4dcf8d7972489664458a4c2d931e7ad8d02740284c641630",
+  "2_44_outer_eval": "2f5ae1f6401bb7309f807ea936a9ddae2dca40e58a620df4f415ba6c13e54fa9",
+  "3_42_inner_val": "971606eb90b4179464c3c2bba30b768c1f5e17ed2c8ec137f59b9273aec94542",
+  "3_42_outer_eval": "b0977e2f417ad7e5d1993e8270940c0d120abf3795e07d6d365a59e6b15eb4f0",
+  "3_43_inner_val": "b9569de7b7c6a6fca7c7fcfbbce2e2670a07c36fa7aa1edab7880bdc3206d435",
+  "3_43_outer_eval": "e675f3e1282c80b1e299f1cdf6481aed3fa53089d06f8e1f371c8d5feeeef397",
+  "3_44_inner_val": "f247aeb8348b5e8beb1cd763bbedf14df4b80bb8806d3ec0aa7713b0d7cbafc5",
+  "3_44_outer_eval": "f9f87615214691b281e20731d7290367508c328f3b40d92175bded1f759d2d63",
+  "4_42_inner_val": "a434a1bd6cfdd9c7bc1ebecf540ab0c11bca3393361ce3b620c2485856b9c71e",
+  "4_42_outer_eval": "c9497295c2a9d54d88e444d39087f96165dea544665f506495f6f0ef4f1d6d8e",
+  "4_43_inner_val": "71d53581d3451dafefab3441c88d8fad1b42fa227b81e8c88bea050ed80706d0",
+  "4_43_outer_eval": "bb0547ba2a6d3e4aed0fc804d8a67909b7af1dc472a37e0f49f4dcec5bc355d7",
+  "4_44_inner_val": "5e558ae0608523d0193d3826f683f0251720a2f254a255b9ab32e5cce41312fb",
+  "4_44_outer_eval": "9cf8e09154ee8bde74fcdb1b79b71fea5f57322e1e5540759a01fef574d80d31"
+ },
+ "n_embedding_files": 30,
+ "mobilenet_p3c_per_query": {
+  "file": "analysis\\stage_p3c\\CFF_EXTERNAL_PRIMARY_PER_QUERY_OUTCOMES_ENHANCED.csv",
+  "sha256": "378c00bcb0d202b555043844e8f06a6325be724a4811df05e4db4bf94ceaad8e"
+ },
+ "local_fv_record": {
+  "file": "analysis\\stage_p3b\\CFF_P3B_CODEBOOK_FV_RECORD.json",
+  "sha256": "d43f60d34e66af40656aad6c83fe279f72f2a39def20c5a7ff366919b4226f3f"
+ },
+ "protocol_v2_content_sha256": "1ba42857cc046840185be2021943e62c8715fe5e6f96dff05cb7f27e1413befc",
+ "nested_split_content_sha256": "9dbdd6e0b99b03ba4f880fd97ec492937362bcf23f36a721a01ee96a42604ff4",
+ "alpha": 0.5,
+ "tie_rule": "optimistic",
+ "aggregation": "max",
+ "bootstrap": {
+  "unit": "identity cluster",
+  "draws": 10000,
+  "seed": 20260922,
+  "ci": "95% percentile"
+ },
+ "contrast_S": {
+  "name": "Delta_Global",
+  "definition": "mean_seed[ R1_EffNetV2S - R1_MobileNet ]",
+  "mobilenet_source": "P3-C sealed per-query outcomes, never re-run"
+ },
+ "contrast_C": {
+  "name": "Delta_Local|Modern",
+  "definition": "mean_seed[ R1_EffNetV2S+Local - R1_EffNetV2S ]"
+ },
+ "no_additional_confirmatory_contrast": true,
+ "forbidden_after_opening": [
+  "modify evaluator",
+  "retrain",
+  "checkpoint reselection",
+  "change recipe",
+  "drop a seed",
+  "drop a fold",
+  "swap backbone",
+  "re-fit the local codebook"
+ ],
+ "seal_content_sha256": "e3cb028d681255974f0600a59ac103ca77d5c5557b93ca3b0223987d83ae51d7"
+}

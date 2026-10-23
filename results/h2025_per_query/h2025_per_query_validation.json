@@ -1,0 +1,102 @@
+{
+ "source": "D:\\CowReID_Paper\\strengthening_20261023\\results_raw\\stage_h2025_per_query\\h2025_per_query_ranks.csv",
+ "n_rows": 8910,
+ "regimes": {
+  "g1": {
+   "rank1_query_weighted": {
+    "delta": 0.05892255892255892,
+    "ci95": [
+     0.023270276467505235,
+     0.09428706199460914
+    ],
+    "n_repeats": 30,
+    "n_positive": 27,
+    "n_negative": 3
+   },
+   "macro_rank1_identity_balanced": {
+    "delta": 0.05751984126984126,
+    "ci95": [
+     0.020245783730158732,
+     0.09562586805555556
+    ],
+    "n_repeats": 30,
+    "n_positive": 26,
+    "n_negative": 4
+   },
+   "identity_level_map_mrr": {
+    "delta": 0.04207240010270312,
+    "ci95": [
+     0.008523528914768765,
+     0.073811688626942
+    ],
+    "n_repeats": 30,
+    "n_positive": 28,
+    "n_negative": 2
+   }
+  },
+  "g3": {
+   "rank1_query_weighted": {
+    "delta": 0.13299663299663303,
+    "ci95": [
+     0.07137890533239372,
+     0.19728798449612406
+    ],
+    "n_repeats": 30,
+    "n_positive": 30,
+    "n_negative": 0
+   },
+   "macro_rank1_identity_balanced": {
+    "delta": 0.13861359126984127,
+    "ci95": [
+     0.07372284226190476,
+     0.2116187375992063
+    ],
+    "n_repeats": 30,
+    "n_positive": 30,
+    "n_negative": 0
+   },
+   "identity_level_map_mrr": {
+    "delta": 0.09644706257079996,
+    "ci95": [
+     0.050715599705901664,
+     0.14208284714525873
+    ],
+    "n_repeats": 30,
+    "n_positive": 30,
+    "n_negative": 0
+   }
+  },
+  "full": {
+   "rank1_query_weighted": {
+    "delta": 0.15488215488215487,
+    "ci95": [
+     0.06451307429130007,
+     0.24509803921568624
+    ],
+    "n_repeats": 30,
+    "n_positive": 30,
+    "n_negative": 0
+   },
+   "macro_rank1_identity_balanced": {
+    "delta": 0.1599702380952381,
+    "ci95": [
+     0.06914682539682541,
+     0.2618055555555555
+    ],
+    "n_repeats": 30,
+    "n_positive": 30,
+    "n_negative": 0
+   },
+   "identity_level_map_mrr": {
+    "delta": 0.10550955778228513,
+    "ci95": [
+     0.0444956016673189,
+     0.16459477093473307
+    ],
+    "n_repeats": 30,
+    "n_positive": 30,
+    "n_negative": 0
+   }
+  }
+ }
+}

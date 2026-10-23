@@ -1,0 +1,63 @@
+{
+ "schema": "h2025_p4c_evaluation_audit/v1",
+ "stage": "P4-C",
+ "started_at": "2026-10-23T20:40:19",
+ "checks": [
+  {
+   "check": "p4b_input_seal_hash_matches_ruling",
+   "ok": true,
+   "detail": "c205cf10a3ee6455e7cbb15f"
+  },
+  {
+   "check": "evaluator_hash_matches_execution_seal",
+   "ok": true,
+   "detail": "evaluator=ac2afba9809b3b84"
+  },
+  {
+   "check": "execution_seal_pins_frozen_constants",
+   "ok": true,
+   "detail": "alpha=0.5 tie=optimistic agg=max B=10000 seed=20260922"
+  },
+  {
+   "check": "totals_are_256_768_1104_1872",
+   "ok": true,
+   "detail": "256 ids / 768 gallery / 1104 query / 1872 images"
+  }
+ ],
+ "p4b_seal_substitution": {
+  "ruling_quoted": "c82ae56e9ece2ec033856ac518373f54c484c5a6f7d25ce44c8ccf80457a8ab1",
+  "in_force": "c205cf10a3ee6455e7cbb15f89888c414bf6029cb190541f8f27e0b0c3c79f26",
+  "reason": "engineering fix performed BEFORE any real outer-eval metric was read: the P4-B embedding writer ordered images by (canonical, rel) while the P3-B Local FV writer groups by identity in split order, so the two arms were misaligned. The P4-C selftest failed on dinov3_seed_alignment, the writer was corrected to reproduce P3-B's ordering exactly, embeddings were regenerated and the P4-B seal was rebuilt. The ruling permits repairing engineering faults before the endpoint is opened.",
+  "real_metric_read_before_fix": false
+ },
+ "finished_at": "2026-10-23T20:40:20",
+ "result": {
+  "contrast_S": {
+   "effect": 0.06672705314009668,
+   "ci95": [
+    0.04827305144161967,
+    0.08637826377438979
+   ],
+   "supported": true
+  },
+  "contrast_C": {
+   "effect": 0.0027173913043477826,
+   "ci95": [
+    -0.0035431227136614803,
+    0.009179744851170681
+   ],
+   "supported": false
+  },
+  "case": "B"
+ },
+ "outputs": {
+  "execution_seal": "analysis\\stage_p4c\\P4C_EFFNETV2_EXECUTION_SEAL.json",
+  "result_json": "analysis\\stage_p4c\\P4C_EFFNETV2_GLOBAL_RESULT.json",
+  "result_md": "analysis\\stage_p4c\\P4C_EFFNETV2_GLOBAL_RESULT.md",
+  "per_query": "analysis\\stage_p4c\\P4C_EFFNETV2_PER_QUERY_OUTCOMES.csv",
+  "bootstrap": "analysis\\stage_p4c\\P4C_EFFNETV2_BOOTSTRAP.npz",
+  "audit": "analysis\\stage_p4c\\P4C_EFFNETV2_EVALUATION_AUDIT.json"
+ },
+ "all_checks_ok": true,
+ "status": "P4-C COMPLETE — STOP"
+}

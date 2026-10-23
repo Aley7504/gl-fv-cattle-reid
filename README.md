@@ -125,3 +125,17 @@ publication).
 * **SIFT + Fisher Vector baseline** (`results/stage_f_sift_h2025.json`): a traditional local descriptor under the identical descriptor budget, codebook configuration and evaluation chain.
 * **Comparator reproducibility** (`code/p5_comparator/`, `results/P5C_*`): the scripts and per-query outcomes behind the same-protocol comparison table.
 * **Runnability**: the vendored local-feature code is now located in `third_party/local_fv`; the Hessian-affine weights are not redistributed (upstream licence) and `code/LOCAL_WEIGHTS.md` gives their provenance and expected hashes; the two scripts with a hard-coded project root now read `H2025_ROOT` from the environment; `timm` was added to the requirements.
+
+## Changes in v1.0.7
+
+* **CFF arm for the EfficientNetV2-S backbone** (`results/P4C_EFFNETV2_*`): the third global representation evaluated under the CFF protocol, trained on the same nested split with the same ArcFace objective and the same inner-validation selection rule; the local branch, the region of interest and the per-fold codebooks are the frozen ones. The BatchNorm statistic-group deviation is recorded in the training record.
+* **CFF coverage-ladder intervals** (`results/cff_ladder_ci/`): the identity-cluster bootstrap that the ladder plan declared and that was never executed has now been run; the three-image rung reproduces the sealed primary contrast exactly, which validates the recomputation.
+* **H2025 per-query ranks** (`results/h2025_per_query/`): the per-query ranks of the global and fused arms for every regime, realization and seed, so the primary numbers can be recomputed from a file instead of by re-running the evaluation program; the accompanying validation file recomputes the reported contrast and interval from that file.
+* The scripts that produced these files are in `code/`.
+
+## Changes in v1.0.7
+
+* **CFF arm for the EfficientNetV2-S backbone** (`results/P4C_EFFNETV2_*`): the third global representation evaluated under the CFF protocol, trained on the same nested split with the same ArcFace objective and the same inner-validation selection rule; the local branch, the region of interest and the per-fold codebooks are the frozen ones. The BatchNorm statistic-group deviation is recorded in the training record.
+* **CFF coverage-ladder intervals** (`results/cff_ladder_ci/`): the identity-cluster bootstrap that the ladder plan declared and that was never executed has now been run; the three-image rung reproduces the sealed primary contrast exactly, which validates the recomputation.
+* **H2025 per-query ranks** (`results/h2025_per_query/`): the per-query ranks of the global and fused arms for every regime, realization and seed, so the primary numbers can be recomputed from a file instead of by re-running the evaluation program; the accompanying validation file recomputes the reported contrast and interval from that file.
+* The scripts that produced these files are in `code/`.
